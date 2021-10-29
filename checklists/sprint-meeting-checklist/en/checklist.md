@@ -1,3 +1,17 @@
+---
+author_username: felipefarias
+category: Agile Processes
+color: ''
+description: Here is what the Vinta managers need to pay attention when they are running
+  a sprint meeting. Not all of these points to be discussed every time, but they need
+  to be clarified whenever necessary.
+github_repository: https://github.com/vintasoftware/sprint-meeting-checklist
+labels:
+- development-workflow
+- agile
+slug: sprint-meeting-checklist
+title: Sprint Meeting Checklist
+
 ## Process
 - [ ] Check with everyone if Trello represents what has been and shall be done.
 - [ ] Remember to report to the client the value that is being delivered (faster loading speed, less crashes, improved security/safety) from that sprint instead of technical stuff (do that only if necessary).

@@ -1,3 +1,16 @@
+---
+author_username: robnff
+category: Agile Processes
+color: ''
+description: Checklist to avoid wasting time in meetings, focusing them on sharing
+  knowledge, instead of updates.
+github_repository: https://github.com/vintasoftware/weekly-meeting-checklist
+labels:
+- agile
+- meetings
+slug: weekly-meeting-checklist
+title: Weekly Meeting Checklist
+
 ## Questions to Answer During Meeting
   * [ ] Did you start any new process on your project this week?
   * [ ] What did the team do that was not project related?

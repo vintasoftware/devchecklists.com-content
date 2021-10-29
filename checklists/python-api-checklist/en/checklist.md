@@ -1,3 +1,16 @@
+---
+author_username: fjsj
+category: Python
+color: ''
+description: Useful checklist for building good Python library APIs, based on "How
+  to make a good library API" PyCon 2017 talk.
+github_repository: https://github.com/vintasoftware/python-api-checklist
+labels:
+- python
+- api-rest
+slug: python-api-checklist
+title: Python API Checklist
+
 ## 1. Simplicity
   * [ ] Write sample client code in the README:
     * E.g. Pendulum's README starts with [sample code](https://github.com/sdispater/pendulum).

@@ -1,3 +1,18 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: ''
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/design-specs-interaction
+labels:
+- development-workflow
+- good-practices
+- product-design
+- interaction
+- specs
+slug: design-specs-interaction
+title: 'Design: Specs & Interaction'
+
 ## Interactive States 
 ##### These are the most common states for web buttons, links, etc. but your UI can have more or less states depending on the function of a specific element.
 

@@ -1,3 +1,15 @@
+---
+author_username: filipeximenes
+category: Python
+color: ''
+description: Useful checklist for building great Celery tasks.
+github_repository: https://github.com/vintasoftware/celery-tasks-checklist
+labels:
+- python
+- celery
+slug: celery-tasks-checklist
+title: Celery tasks checklist
+
 ## 1. Boas Práticas
 
   * [ ] Prefira [RabbitMQ](https://www.rabbitmq.com/) ou [Redis](https://redis.io/) como broker (nunca use banco de dados relacional como broker de produção)

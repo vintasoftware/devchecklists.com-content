@@ -1,3 +1,18 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: Useful for designers, project managers and product owners, to understand
+  if a feature needs a design cycle and how complex it is.
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/feature-briefing
+labels:
+- development-workflow
+- agile
+- good-practices
+- documentation
+slug: design-feature-briefing
+title: 'Design: Feature Briefing'
+
 ## 1. Does the feature need a design cycle?
 ##### If any of the following is true, the feature needs to go through a design cycle. If more than one affirmation is true, it might give you a hint about the feature’s complexity. 
 * [ ] It will enable users to perform new actions.

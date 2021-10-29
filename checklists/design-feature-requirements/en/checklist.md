@@ -1,3 +1,19 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: "A guide for designers to make sure they understand the PO\u2019s vision\
+  \ and goals for a feature."
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/feature-requirements
+labels:
+- agile
+- product-design
+- UX
+- UI
+- interaction
+slug: design-feature-requirements
+title: Design Feature Requirements
+
 ## Checklist Objective
 Understanding the scope of a feature during a meeting with Product Owners is a key activity in the product design cycle. Designers need to make sure we understand the stakeholder’s vision for it, and what is the goal we’re striving for.
 

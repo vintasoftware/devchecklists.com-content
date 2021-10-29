@@ -1,3 +1,18 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: A guide to build and run a moderated usability test with remote participants.
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/remote-moderated-ux-test
+labels:
+- product-design
+- UX
+- research
+- remote
+- usability
+slug: design-moderated-ux-test
+title: 'Design: Moderated UX Test'
+
 ## 1. Build your prototype
 * [ ] Pick one device or viewport to build the prototype for. 
     * Consider the context your users are likely to be in and which device they use more often. User behavior data can help you with this decision.

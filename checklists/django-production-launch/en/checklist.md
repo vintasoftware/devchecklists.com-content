@@ -1,3 +1,18 @@
+---
+author_username: laisvarejao
+category: Python
+color: ''
+description: A Django specific production checklist used at Vinta before launching
+  projects we've been working on.
+github_repository: https://github.com/vintasoftware/django-production-launch-checklist
+labels:
+- quality-assurance
+- python
+- django
+- good-practices
+slug: django-production-launch
+title: Django Production Launch
+
 ## Content
  * [ ] Spell-check copy
  * [ ] Check links are correct

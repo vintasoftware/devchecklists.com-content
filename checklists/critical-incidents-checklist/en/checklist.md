@@ -1,3 +1,15 @@
+---
+author_username: laisvarejao
+category: Project Management
+color: '#46BCDF'
+description: Useful checklist for dealing with recovery crisis. Based on the talk
+  "Saving Great Projects" 2017 Python Brasil.
+github_repository: https://github.com/vintasoftware/critical-incidents-checklist
+labels:
+- incidents
+slug: critical-incidents-checklist
+title: Critical Incidents Checklist
+
 ## 1. Manage the client's expectations.
   * [ ] Make sure the client knows from the start that critical incidents are natural. 
   * [ ] Disclose your backup plan and recovery process.

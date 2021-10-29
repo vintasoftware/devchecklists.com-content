@@ -1,3 +1,16 @@
+---
+author_username: lucabezerra
+category: Agile Processes
+color: ''
+description: Do's and Don'ts for Pull Requests. Improve code quality and review speed.
+github_repository: https://github.com/vintasoftware/pull-requests-checklist
+labels:
+- development-workflow
+- pull-requests
+- quality-assurance
+slug: pull-requests-checklist
+title: 'PR: Vinta Checklist'
+
 ## 1. Pull request workflow
   * [ ] Read thoroughly the feature description to check if everything is implemented.
   * [ ] Run the code and use it as the end user would. Double check requested feature’s description.

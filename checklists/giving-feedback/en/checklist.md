@@ -1,3 +1,17 @@
+---
+author_username: laudlemos
+category: Relationship
+color: ''
+description: A guide on how to give feedback effectively through preparation, execution,
+  and follow-up.
+github_repository: https://github.com/vintasoftware/vinta-feedback-checklists/tree/master/giving-feedback
+labels:
+- incidents
+- meetings
+- interaction
+slug: giving-feedback
+title: Giving Feedback
+
 ## Before
 
 * [ ] Prepare feedback by **answering** their questions

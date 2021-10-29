@@ -1,3 +1,16 @@
+---
+author_username: fjsj
+category: Python
+color: ''
+description: Checklist for build great Django apps.
+github_repository: https://github.com/vintasoftware/django-apps-checklist
+labels:
+- python
+- django
+- good-practices
+slug: django-apps-checklist
+title: Django Apps Checklist
+
 ## 1. Concept
   * [ ] Check if your app follows [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy): "Do one thing, and do it well".
   * [ ] Check if your app's description fits a few words. Examples:

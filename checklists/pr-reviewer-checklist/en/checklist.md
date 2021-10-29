@@ -1,3 +1,16 @@
+---
+author_username: laisvarejao
+category: Agile Processes
+color: ''
+description: Set of guidelines for PR reviewers to guarantee a more civilized approach
+  and avoid creating a toxic feedback culture.
+github_repository: https://github.com/vintasoftware/pr-reviewer-checklist
+labels:
+- development-workflow
+- pull-requests
+slug: pr-reviewer-checklist
+title: 'PR: Reviewer Checklist'
+
 ## Pull request review workflow
 
 - [ ] Review the PR ASAP after being allocated to it.

@@ -1,3 +1,16 @@
+---
+author_username: laisvarejao
+category: Web
+color: ''
+description: A checklist we use here at Vinta to ensure high quality software at scale
+github_repository: https://github.com/vintasoftware/high-quality-software-standards
+labels:
+- development-workflow
+- agile
+- good-practices
+slug: vintas-high-quality-standards
+title: Vinta's High Quality Standards
+
 # Vinta's High Quality Software Standards
 
 * [ ] Distributed Version Control (like Git)

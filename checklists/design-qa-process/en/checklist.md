@@ -1,3 +1,18 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: A step-by-step guide to make sure the software shipped to production
+  is consistent with design specs.
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/design-qa
+labels:
+- development-workflow
+- quality-assurance
+- agile
+- product-design
+slug: design-qa-process
+title: 'Design: QA Process'
+
 ## Checklist Objective
 ##### At [Vinta](https://vintasoftware.com), we have a design review process for pieces of software that are about to be (or that have just been) shipped to production. All tasks that have a design spec associated with it should go through Design QA. 
 

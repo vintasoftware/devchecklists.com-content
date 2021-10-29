@@ -1,3 +1,16 @@
+---
+author_username: felipefarias
+category: Product Metrics
+color: ''
+description: Landing pages are usually detached from the original flow of your homepage
+  and have a very specific point to make. This checklist helps remembering that and
+  eventual ramifications when creating your own.
+github_repository: https://github.com/vintasoftware/landing-page-creation-checklist
+labels:
+- good-practices
+slug: new-landing-page-checklist
+title: Landing Optimization Checklist
+
 ## Process
 -  [ ] Are you sending your inbound traffic to a standalone landing page?
 -  [ ] Is your landing page about only one subject?

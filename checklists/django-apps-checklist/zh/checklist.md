@@ -1,3 +1,16 @@
+---
+author_username: fjsj
+category: Python
+color: ''
+description: Checklist for build great Django apps.
+github_repository: https://github.com/vintasoftware/django-apps-checklist
+labels:
+- python
+- django
+- good-practices
+slug: django-apps-checklist
+title: Django Apps Checklist
+
 ## 1. 概念
   * [ ] 检查你的应用是否遵循 [Unix 哲学](https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6): "让程序只做好一件事"
   * [ ] 检查你的应用是否可以被一句话描述，参考：

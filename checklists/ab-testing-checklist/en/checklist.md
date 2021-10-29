@@ -1,3 +1,14 @@
+---
+author_username: rsarai
+category: Product Metrics
+color: ''
+description: All the learning of a team doing A/B tests on one checklist.
+github_repository: https://github.com/vintasoftware/ab-testing-checklist
+labels:
+- product-metrics
+slug: ab-testing-checklist
+title: A/B Testing Checklist
+
 ## 1. Setup of A/B Testing Tools
   * [ ] Avoid the [NIH(Not Invented Here)](https://www.techopedia.com/definition/3848/not-invented-here-syndrome-nihs) Syndrome.
   * [ ] Make sure you already have a web analytics package on your site.

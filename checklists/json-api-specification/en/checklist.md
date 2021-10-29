@@ -1,3 +1,15 @@
+---
+author_username: deciian
+category: Web
+color: ''
+description: 'JSON: API Specification Checklist'
+github_repository: https://github.com/deciian/devchecklists-json-api
+labels:
+- API
+- JSON
+slug: json-api-specification
+title: 'JSON: API Specification'
+
 # JSON:API v1.0
 
 # Content Negotiation

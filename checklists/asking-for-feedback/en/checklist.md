@@ -1,3 +1,16 @@
+---
+author_username: laudlemos
+category: Relationship
+color: ''
+description: A guide on how to ask for feedback effectively.
+github_repository: https://github.com/vintasoftware/vinta-feedback-checklists/tree/master/asking-for-feedback
+labels:
+- incidents
+- meetings
+- interaction
+slug: asking-for-feedback
+title: Asking for Feedback
+
 ## Preparing the Request
 
 * [ ] Make a **list of topics** you wish to get feedback on

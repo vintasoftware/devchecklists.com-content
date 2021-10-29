@@ -1,3 +1,18 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: "Before handing off design specs to development, check if you\u2019re\
+  \ considering all the necessary viewports and breaking points."
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/design-specs-responsiveness
+labels:
+- development-workflow
+- good-practices
+- documentation
+- specs
+slug: design-specs-responsiveness
+title: 'Design: Specs & Responsiveness'
+
 ## Viewports and Breaking Points
 ##### Here is a list of viewports and breaking points for most common platforms to check your design specs for responsiveness. Remember to check all the important ones your software should be working on and if they're not here, add them to the list ;)
 

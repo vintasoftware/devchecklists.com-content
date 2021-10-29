@@ -1,3 +1,17 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: A step by step for designers to define a feature's architecture and user
+  journeys.
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/feature-architecture
+labels:
+- agile
+- good-practices
+- interaction
+slug: design-feature-architecture
+title: 'Design: Feature Architecture'
+
 ##### The design process for new features within a product involves defining its architecture, how it should function, and what is the user journey through the product. This step comes before proposing a graphic user interface. It is essential and should not be overlooked. 
 
 ## 1. Outlining the journey

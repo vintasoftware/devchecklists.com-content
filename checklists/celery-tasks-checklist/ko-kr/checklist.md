@@ -1,3 +1,15 @@
+---
+author_username: filipeximenes
+category: Python
+color: ''
+description: Useful checklist for building great Celery tasks.
+github_repository: https://github.com/vintasoftware/celery-tasks-checklist
+labels:
+- python
+- celery
+slug: celery-tasks-checklist
+title: Celery tasks checklist
+
 ## 1. Best Practices
   * [ ] [RabbitMQ](https://www.rabbitmq.com/) 또는 [Redis](https://redis.io/)를 브로커(broker)로 쓰세요. (상용 환경에서 RDB를 브로커로 쓰지 마세요.)
   * [ ] 복잡한 객체(object)를 태스크(task)에 파라미터(parameter)로 사용하지 마세요. (예를 들면 Django의 모델 객체)

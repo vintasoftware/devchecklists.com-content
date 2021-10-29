@@ -1,3 +1,18 @@
+---
+author_username: fjsj
+category: Web
+color: ''
+description: A checklist we use here at Vinta before launching a product we've been
+  working on.
+github_repository: https://github.com/vintasoftware/production-launch-checklist
+labels:
+- quality-assurance
+- python
+- django
+- deployment
+slug: production-launch-checklist
+title: Production Launch Checklist
+
 ## Content
  * [ ] Spell-check copy
  * [ ] Check links are correct

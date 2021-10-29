@@ -1,3 +1,16 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: A guide to help designers and developers understand the viability of
+  a design solution.
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/technical-viability
+labels:
+- development-workflow
+- product-design
+slug: design-technical-viability
+title: 'Design: Technical Viability'
+
 ## Who should use this checklist?
 Designer and Project Manager should discuss these points before presenting a design solution to the client.
 

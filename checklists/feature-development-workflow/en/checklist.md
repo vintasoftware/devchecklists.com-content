@@ -1,3 +1,17 @@
+---
+author_username: felipefarias
+category: Project Management
+color: ''
+description: Developing a feature is much more than just coding it what was specified.
+  This checklist covers other points that are important for code quality and a smoother
+  hand-off.
+github_repository: https://github.com/vintasoftware/feature-development-workflow
+labels:
+- development-workflow
+- quality-assurance
+slug: feature-development-workflow
+title: Feature Development Workflow
+
 ## Process
 - [ ] Read feature specs thoroughly.
 - [ ] Follow [git-flow](http://nvie.com/posts/a-successful-git-branching-model/).

@@ -1,3 +1,16 @@
+---
+author_username: robnff
+category: Project Management
+color: ''
+description: Checklist for everything that needs to be described and linked whenever
+  a developer creates a new feature card on Trello so other people (or the same dev
+  in the future) can understand the whole feature quicker.
+github_repository: https://github.com/vintasoftware/feature-card-creation-checklist
+labels:
+- development-workflow
+slug: feature-card-checklist
+title: Feature Card Checklist
+
 ## Process
 - [ ] Include direct URL of product if possible.
 - [ ] Write a small summary describing the feature.

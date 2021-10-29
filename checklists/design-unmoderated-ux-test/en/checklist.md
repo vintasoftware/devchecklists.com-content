@@ -1,3 +1,18 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: A guide to build and run an umoderated usability test with remote participants.
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/unmoderated-remote-ux-test
+labels:
+- product-design
+- UX
+- research
+- remote
+- usability
+slug: design-unmoderated-ux-test
+title: 'Design: Umoderated UX Test'
+
 ## 1. Build and test your prototype
 * [ ] Pick one device or viewport to build the prototype on. 
     * Consider the context your users are likely to be in and which device they use more often. User behavior data can help you with this decision.

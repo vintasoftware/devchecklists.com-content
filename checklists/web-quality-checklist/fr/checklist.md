@@ -1,3 +1,18 @@
+---
+author_username: Opquast-team
+category: Web
+color: ''
+description: The Web Quality Checklist is intended for all professionals who create
+  websites. It is designed in a collaborative way by a community of Web professionals
+  led by the French company Opquast. The checklist is released under the CC-BY-SA
+  Licence.
+github_repository: https://github.com/Opquast/Opquast-Web-Quality
+labels:
+- quality-assurance
+- good-practices
+slug: web-quality-checklist
+title: Web Quality Checklist
+
 La check-list Qualité Web s'adresse à tous les professionnels qui créent des sites Web. Elle est conçue de façon collaborative par une communauté de professionnels animée par la société française Opquast (Open Quality Standards). la check-list est diffusée sous licence Creative commons BY-SA. la version originale est disponible à l'adresse : 
 https://checklists.opquast.com/fr/qualiteweb/
 

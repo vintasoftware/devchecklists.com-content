@@ -1,3 +1,19 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: Before handing off design specs to the engineering team, check if your
+  interface is visually consistent.
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/design-specs-consistency
+labels:
+- development-workflow
+- agile
+- product-metrics
+- documentation
+- specs
+slug: design-specs-consistency
+title: 'Design: Specs & Consistency'
+
 ## Color Palette
 ##### All these color patterns and behaviors should be predefined by a Styleguide to ensure consistency.
 * [ ] Contrast (https://color.a11y.com/ContrastPair/)

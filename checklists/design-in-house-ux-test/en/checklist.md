@@ -1,3 +1,19 @@
+---
+author_username: Aline Silveira
+category: Design
+color: ''
+description: A step-by-step guide to help designers run a quick UX test with people
+  around the office.
+github_repository: https://github.com/vintasoftware/vinta-design-checklists/tree/master/in-house-ux-test
+labels:
+- product-design
+- UX
+- research
+- remote
+- usability
+slug: design-in-house-ux-test
+title: 'Design: In-house UX Test'
+
 ## Checklist Objective
 ##### This checklist is meant to be used by product designers while setting up and executing an usability test with a prototype, with people around the office. The test should be quick and not involve too much effort on the designer’s part.
 

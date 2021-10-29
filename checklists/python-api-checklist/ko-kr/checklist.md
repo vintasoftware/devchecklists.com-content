@@ -1,3 +1,16 @@
+---
+author_username: fjsj
+category: Python
+color: ''
+description: Useful checklist for building good Python library APIs, based on "How
+  to make a good library API" PyCon 2017 talk.
+github_repository: https://github.com/vintasoftware/python-api-checklist
+labels:
+- python
+- api-rest
+slug: python-api-checklist
+title: Python API Checklist
+
 ## 1. 간결함
   * [ ] README에서 샘플 코드 제공
     * 사례: Pendulum의 README는 [샘플 코드](https://github.com/sdispater/pendulum)로 시작한다.

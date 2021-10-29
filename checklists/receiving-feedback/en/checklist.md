@@ -1,3 +1,17 @@
+---
+author_username: laudlemos
+category: Relationship
+color: ''
+description: A guide on how to receive feedback effectively through preparation, execution,
+  and follow-up.
+github_repository: https://github.com/vintasoftware/vinta-feedback-checklists/tree/master/receiving-feedback
+labels:
+- incidents
+- meetings
+- interaction
+slug: receiving-feedback
+title: Receiving Feedback
+
 ## Before
 
 * [ ] Prepare yourself by getting into a calm and **reflective mindset**
