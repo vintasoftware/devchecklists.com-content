@@ -10,7 +10,7 @@ labels:
 - quality-assurance
 slug: pull-requests-checklist
 title: 'PR: Vinta Checklist'
-
+---
 ## 1. Pull request workflow
   * [ ] Read thoroughly the feature description to check if everything is implemented.
   * [ ] Run the code and use it as the end user would. Double check requested feature’s description.

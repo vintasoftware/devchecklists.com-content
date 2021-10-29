@@ -11,7 +11,7 @@ labels:
 - agile
 slug: bug-card-creation-checklist
 title: Bug Card Creation checklist
-
+---
 ## Process
 - [ ] Make sure to test latest version of product, with all migrations ran and all cache cleared.
 - [ ] Include direct URL of product if possible.

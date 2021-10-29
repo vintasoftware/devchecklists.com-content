@@ -10,7 +10,7 @@ labels:
 - api-rest
 slug: python-api-checklist
 title: Python API Checklist
-
+---
 ## 1. Simplicity
   * [ ] Write sample client code in the README:
     * E.g. Pendulum's README starts with [sample code](https://github.com/sdispater/pendulum).

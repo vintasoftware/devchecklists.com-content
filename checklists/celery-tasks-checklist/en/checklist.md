@@ -9,7 +9,7 @@ labels:
 - celery
 slug: celery-tasks-checklist
 title: Celery tasks checklist
-
+---
 ## 1. Best Practices
   * [ ] Prefer [RabbitMQ](https://www.rabbitmq.com/) or [Redis](https://redis.io/) as broker (never use a relational database as production broker).
   * [ ] Do not use complex objects in task as parameters. E.g.: Avoid Django model objects:

@@ -9,7 +9,7 @@ labels:
 - JSON
 slug: json-api-specification
 title: 'JSON: API Specification'
-
+---
 # JSON:API v1.0
 
 # Content Negotiation

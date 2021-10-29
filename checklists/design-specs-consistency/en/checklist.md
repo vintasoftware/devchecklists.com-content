@@ -13,7 +13,7 @@ labels:
 - specs
 slug: design-specs-consistency
 title: 'Design: Specs & Consistency'
-
+---
 ## Color Palette
 ##### All these color patterns and behaviors should be predefined by a Styleguide to ensure consistency.
 * [ ] Contrast (https://color.a11y.com/ContrastPair/)

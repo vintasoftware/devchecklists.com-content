@@ -13,7 +13,7 @@ labels:
 - usability
 slug: design-in-house-ux-test
 title: 'Design: In-house UX Test'
-
+---
 ## Checklist Objective
 ##### This checklist is meant to be used by product designers while setting up and executing an usability test with a prototype, with people around the office. The test should be quick and not involve too much effort on the designer’s part.
 

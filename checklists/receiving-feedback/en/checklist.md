@@ -11,7 +11,7 @@ labels:
 - interaction
 slug: receiving-feedback
 title: Receiving Feedback
-
+---
 ## Before
 
 * [ ] Prepare yourself by getting into a calm and **reflective mindset**

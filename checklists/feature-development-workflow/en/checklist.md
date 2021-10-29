@@ -11,7 +11,7 @@ labels:
 - quality-assurance
 slug: feature-development-workflow
 title: Feature Development Workflow
-
+---
 ## Process
 - [ ] Read feature specs thoroughly.
 - [ ] Follow [git-flow](http://nvie.com/posts/a-successful-git-branching-model/).

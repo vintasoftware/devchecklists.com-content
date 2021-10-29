@@ -10,7 +10,7 @@ labels:
 - meetings
 slug: weekly-meeting-checklist
 title: Weekly Meeting Checklist
-
+---
 ## Questions to Answer During Meeting
   * [ ] Did you start any new process on your project this week?
   * [ ] What did the team do that was not project related?

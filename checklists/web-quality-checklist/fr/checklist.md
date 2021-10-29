@@ -12,7 +12,7 @@ labels:
 - good-practices
 slug: web-quality-checklist
 title: Web Quality Checklist
-
+---
 La check-list Qualité Web s'adresse à tous les professionnels qui créent des sites Web. Elle est conçue de façon collaborative par une communauté de professionnels animée par la société française Opquast (Open Quality Standards). la check-list est diffusée sous licence Creative commons BY-SA. la version originale est disponible à l'adresse : 
 https://checklists.opquast.com/fr/qualiteweb/
 

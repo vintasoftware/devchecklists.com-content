@@ -9,7 +9,7 @@ labels:
 - incidents
 slug: critical-incidents-checklist
 title: Critical Incidents Checklist
-
+---
 ## 1. Manage the client's expectations.
   * [ ] Make sure the client knows from the start that critical incidents are natural. 
   * [ ] Disclose your backup plan and recovery process.

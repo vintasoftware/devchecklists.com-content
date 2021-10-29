@@ -9,7 +9,7 @@ labels:
 - celery
 slug: celery-tasks-checklist
 title: Celery tasks checklist
-
+---
 ## 1. Buenas Prácticas
 
   * [ ] Prefiera [RabbitMQ](https://www.rabbitmq.com/) o [Redis](https://redis.io/) como broker (nunca use una base de datos relacional como broker en producción.

@@ -10,7 +10,7 @@ labels:
 - product-design
 slug: design-technical-viability
 title: 'Design: Technical Viability'
-
+---
 ## Who should use this checklist?
 Designer and Project Manager should discuss these points before presenting a design solution to the client.
 

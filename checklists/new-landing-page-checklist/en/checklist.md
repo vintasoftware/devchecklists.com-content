@@ -10,7 +10,7 @@ labels:
 - good-practices
 slug: new-landing-page-checklist
 title: Landing Optimization Checklist
-
+---
 ## Process
 -  [ ] Are you sending your inbound traffic to a standalone landing page?
 -  [ ] Is your landing page about only one subject?

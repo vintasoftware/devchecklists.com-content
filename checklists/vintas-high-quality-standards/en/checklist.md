@@ -10,7 +10,7 @@ labels:
 - good-practices
 slug: vintas-high-quality-standards
 title: Vinta's High Quality Standards
-
+---
 # Vinta's High Quality Software Standards
 
 * [ ] Distributed Version Control (like Git)

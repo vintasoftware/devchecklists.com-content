@@ -10,7 +10,7 @@ labels:
 - development-workflow
 slug: feature-card-checklist
 title: Feature Card Checklist
-
+---
 ## Process
 - [ ] Include direct URL of product if possible.
 - [ ] Write a small summary describing the feature.

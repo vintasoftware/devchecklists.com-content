@@ -11,7 +11,7 @@ labels:
 - agile
 slug: sprint-meeting-checklist
 title: Sprint Meeting Checklist
-
+---
 ## Process
 - [ ] Check with everyone if Trello represents what has been and shall be done.
 - [ ] Remember to report to the client the value that is being delivered (faster loading speed, less crashes, improved security/safety) from that sprint instead of technical stuff (do that only if necessary).

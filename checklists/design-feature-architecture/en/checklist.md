@@ -11,7 +11,7 @@ labels:
 - interaction
 slug: design-feature-architecture
 title: 'Design: Feature Architecture'
-
+---
 ##### The design process for new features within a product involves defining its architecture, how it should function, and what is the user journey through the product. This step comes before proposing a graphic user interface. It is essential and should not be overlooked. 
 
 ## 1. Outlining the journey

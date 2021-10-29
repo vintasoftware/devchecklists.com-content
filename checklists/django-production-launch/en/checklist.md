@@ -12,7 +12,7 @@ labels:
 - good-practices
 slug: django-production-launch
 title: Django Production Launch
-
+---
 ## Content
  * [ ] Spell-check copy
  * [ ] Check links are correct

@@ -10,7 +10,7 @@ labels:
 - good-practices
 slug: django-apps-checklist
 title: Django Apps Checklist
-
+---
 ## 1. Conceitos
   * [ ] Verifique se seu app segue a [filosofia Unix](https://en.wikipedia.org/wiki/Unix_philosophy): "Faça uma coisa, e faça bem";
   * [ ] Verifique se a descrição do seu app encaixa em poucas palavras. Exemplos:

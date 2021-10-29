@@ -12,7 +12,7 @@ labels:
 - product-design
 slug: design-qa-process
 title: 'Design: QA Process'
-
+---
 ## Checklist Objective
 ##### At [Vinta](https://vintasoftware.com), we have a design review process for pieces of software that are about to be (or that have just been) shipped to production. All tasks that have a design spec associated with it should go through Design QA. 
 
