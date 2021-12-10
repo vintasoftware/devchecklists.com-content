@@ -1,5 +1,5 @@
 ---
-author_username: Aline Silveira
+author_username: Aline Silveira <linecavalcanti@gmail.com>
 category: Design
 color: ''
 description: A guide to build and run a moderated usability test with remote participants.
