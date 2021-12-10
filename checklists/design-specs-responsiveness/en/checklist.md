@@ -1,5 +1,5 @@
 ---
-author_username: Aline Silveira
+author_username: Aline Silveira <linecavalcanti@gmail.com>
 category: Design
 color: ''
 description: "Before handing off design specs to development, check if you\u2019re\
