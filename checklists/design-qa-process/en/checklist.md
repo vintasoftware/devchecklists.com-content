@@ -1,5 +1,5 @@
 ---
-author_username: Aline Silveira
+author_username: Aline Silveira <linecavalcanti@gmail.com>
 category: Design
 color: ''
 description: A step-by-step guide to make sure the software shipped to production
