@@ -1,5 +1,5 @@
 ---
-author_username: Aline Silveira
+author_username: Aline Silveira <linecavalcanti@gmail.com>
 category: Design
 color: ''
 description: A step-by-step guide to help designers run a quick UX test with people
