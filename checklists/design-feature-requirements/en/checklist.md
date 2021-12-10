@@ -1,5 +1,5 @@
 ---
-author_username: Aline Silveira
+author_username: Aline Silveira <linecavalcanti@gmail.com>
 category: Design
 color: ''
 description: "A guide for designers to make sure they understand the PO\u2019s vision\
