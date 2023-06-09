@@ -3,6 +3,7 @@ import { ChecklistService } from "../../../services/checklist";
 import { Tag } from "@/components/tag";
 import { CircleStackIcon } from "@heroicons/react/24/solid";
 import { Checklist } from "@/components/checklist";
+import { LocalesDropdown } from "@/components/localeDropdown";
 
 interface ChecklistParam {
     checklist_slug: string;
@@ -34,28 +35,12 @@ const ChecklistPage = ({
             description,
             author_username,
             author_name,
-            labels = [],
+            tags = [],
         },
         availableLocales,
     } = checklist;
 
-    const Tags = labels.map((label) => <Tag key={label} tag={label} />);
-
-    let LocalesDropdown = null;
-    if (availableLocales && availableLocales.length > 1) {
-        LocalesDropdown = (
-            <details className="h-6">
-                <summary className="m-1">Languages</summary>
-                <ul className="p-2 shadow">
-                    {availableLocales.map((locale) => (
-                        <li key={locale}>
-                            <a href={`${locale}`}>{locale}</a>
-                        </li>
-                    ))}
-                </ul>
-            </details>
-        );
-    }
+    const Tags = tags.map((tag) => <Tag key={tag} tag={tag} />);
 
     return (
         <div className="flex flex-col container mx-auto">
@@ -89,7 +74,7 @@ const ChecklistPage = ({
                         <h5>Checks are saved in your local storage</h5>
                     </div>
                 </div>
-                {LocalesDropdown}
+                <LocalesDropdown availableLocales={availableLocales} />
             </div>
 
             <article className="prose prose-invert prose-ul:list-none max-w-3xl px-10 py-4 bg-gray-900 rounded-md">

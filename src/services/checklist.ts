@@ -21,8 +21,7 @@ export interface FrontMatter {
     color: string;
     description: string;
     github_repository: string;
-    labels: string[];
-    slug: string;
+    tags: string[];
     title: string;
 }
 
@@ -191,53 +190,81 @@ export class ChecklistService {
 
     formatChecklist = (checklist: Checklist) => {};
 
+    private getLocaleFromChecklistFilename = (filename: string) => {
+        const CHECKLIST_FILE_NAME_PATTERN = /^checklist\.([a-z]+)\.md$/;
+
+        const match = filename.match(CHECKLIST_FILE_NAME_PATTERN);
+
+        if (match) {
+            return match[1];
+        }
+
+        return null;
+    };
+
     private _getChecklistFiles = (): ChecklistFile[] => {
         const files = [];
 
-        // Files should be on <checklist-name>/<language>/checklist.md
+        // Files should be on <checklist-slug>/checklist.<locale>.md
         const root = readdirSync(this.checklistsDirectory);
-        for (const folder of root) {
-            const folderPath = path.join(this.checklistsDirectory, folder);
+        for (const checklistFolder of root) {
+            const folderPath = path.join(
+                this.checklistsDirectory,
+                checklistFolder
+            );
             const folderStat = statSync(folderPath);
+
             if (!folderStat.isDirectory()) {
                 console.warn(
-                    "Found non-directory at the root of checklists - all checklists should be on folders",
+                    "Found file at the root of checklists - all checklists should be on folders",
                     { file: folderPath }
                 );
                 continue;
             }
 
-            const locales = readdirSync(folderPath);
-            for (const locale of locales) {
-                const localePath = path.join(folderPath, locale);
-                const localeStat = statSync(localePath);
-
-                // If we find a <checklist-name>/checklist.md, assume it's en
-                if (locale === "checklist.md") {
-                    console.warn(
-                        "Found non-directory inside a checklists folder instead of a locale - will use en as default",
-                        { file: localePath }
-                    );
-                    files.push({
-                        slug: folder,
-                        path: localePath,
-                        locale: "en",
-                    });
-                }
+            const checklistFiles = readdirSync(folderPath);
+            for (const checklistFile of checklistFiles) {
+                const checklistFilePath = path.join(folderPath, checklistFile);
+                const checklistFileStat = statSync(checklistFilePath);
 
                 // Skip other files
-                if (!localeStat.isDirectory()) {
+                if (checklistFileStat.isDirectory()) {
+                    console.debug(
+                        "Found folder inside a checklist folder - ignoring"
+                    );
                     continue;
                 }
 
-                const file = path.join(localePath, "checklist.md");
-                if (existsSync(file)) {
-                    files.push({ slug: folder, path: file, locale });
-                } else {
-                    console.warn("Found locale folder without checklist file", {
-                        folder: localePath,
+                // If we find a <checklist-name>/checklist.md, assume it's en
+                if (checklistFile === "checklist.md") {
+                    console.warn(
+                        "Found checklist without locale suffix - will use en as default",
+                        { file: checklistFilePath }
+                    );
+                    files.push({
+                        slug: checklistFolder,
+                        path: checklistFilePath,
+                        locale: "en",
                     });
+                    continue;
                 }
+
+                const locale =
+                    this.getLocaleFromChecklistFilename(checklistFile);
+
+                if (!locale) {
+                    console.debug(
+                        "Found filename that does not match the expected checklist.<locale>.md - ignoring",
+                        { file: checklistFilePath }
+                    );
+                    continue;
+                }
+
+                files.push({
+                    slug: checklistFolder,
+                    path: checklistFilePath,
+                    locale,
+                });
             }
         }
 
@@ -289,7 +316,7 @@ export class ChecklistService {
         }, {} as Record<string, Checklist[]>);
     };
 
-    public getAllChecklistLanguages = () => {
+    public getAllChecklistLocales = () => {
         const checklists = this.getChecklists();
 
         const locales = checklists.map(({ locale }) => locale);
@@ -331,7 +358,7 @@ export class ChecklistService {
         const checklists = this.getChecklists();
 
         const tags = checklists.flatMap(
-            ({ frontmatter: { labels } }) => labels ?? []
+            ({ frontmatter: { tags } }) => tags ?? []
         );
         const deduplicatedTags = Array.from(new Set(tags));
         const tagSlugs = deduplicatedTags.map((tag) => generateSlug(tag));
@@ -340,7 +367,7 @@ export class ChecklistService {
     };
 
     public getChecklistsByTag = (tag: string) =>
-        this.getChecklists().filter(({ frontmatter: { labels } }) =>
-            labels?.includes(tag)
+        this.getChecklists().filter(({ frontmatter: { tags } }) =>
+            tags?.includes(tag)
         );
 }

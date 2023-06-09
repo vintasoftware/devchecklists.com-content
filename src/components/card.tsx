@@ -12,11 +12,11 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
             author_username,
             github_repository,
             description,
-            labels = [],
+            tags = [],
         },
     } = checklist;
 
-    const Tags = labels.map((label) => <Tag key={label} tag={label} />);
+    const Tags = tags.map((tag) => <Tag key={tag} tag={tag} />);
 
     return (
         <div className="flex flex-col shrink-0 w-96 rounded-md bg-gray-900 m-4">
