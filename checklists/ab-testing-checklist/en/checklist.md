@@ -1,5 +1,6 @@
 ---
 author_username: rsarai
+author_name: Rebeca Sarai
 category: Product Metrics
 color: ''
 description: All the learning of a team doing A/B tests on one checklist.

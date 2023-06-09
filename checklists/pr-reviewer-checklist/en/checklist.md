@@ -1,5 +1,6 @@
 ---
 author_username: laisvarejao
+author_name: Lais Varejão
 category: Agile Processes
 color: ''
 description: Set of guidelines for PR reviewers to guarantee a more civilized approach

@@ -1,5 +1,6 @@
 ---
 author_username: laisvarejao
+author_name: Lais Varejão
 category: Project Management
 color: ''
 description: Checklist on how to best describe a bug so the person correcting loses

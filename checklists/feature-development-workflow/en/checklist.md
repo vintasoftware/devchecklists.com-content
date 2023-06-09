@@ -1,5 +1,6 @@
 ---
 author_username: felipefarias
+author_name: Felipe Farias
 category: Project Management
 color: ''
 description: Developing a feature is much more than just coding it what was specified.

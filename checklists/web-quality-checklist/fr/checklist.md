@@ -1,5 +1,6 @@
 ---
 author_username: Opquast-team
+author_name: Opquast
 category: Web
 color: ''
 description: The Web Quality Checklist is intended for all professionals who create

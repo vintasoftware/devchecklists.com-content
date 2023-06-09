@@ -1,5 +1,6 @@
 ---
 author_username: fjsj
+author_name:  Flávio Juvenal da Silva Junior 
 category: Python
 color: ''
 description: Useful checklist for building good Python library APIs, based on "How

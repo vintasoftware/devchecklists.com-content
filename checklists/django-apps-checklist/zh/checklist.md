@@ -1,5 +1,6 @@
 ---
 author_username: fjsj
+author_name:  Flávio Juvenal da Silva Junior 
 category: Python
 color: ''
 description: Checklist for build great Django apps.

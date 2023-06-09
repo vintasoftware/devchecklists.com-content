@@ -1,5 +1,6 @@
 ---
 author_username: fjsj
+author_name:  Flávio Juvenal da Silva Junior 
 category: Web
 color: ''
 description: A checklist we use here at Vinta before launching a product we've been

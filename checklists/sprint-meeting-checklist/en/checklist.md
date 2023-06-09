@@ -1,5 +1,6 @@
 ---
 author_username: felipefarias
+author_name: Felipe Farias
 category: Agile Processes
 color: ''
 description: Here is what the Vinta managers need to pay attention when they are running

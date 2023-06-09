@@ -1,5 +1,6 @@
 ---
 author_username: laudlemos
+author_name: Laura Lemos
 category: Relationship
 color: ''
 description: A guide on how to give feedback effectively through preparation, execution,

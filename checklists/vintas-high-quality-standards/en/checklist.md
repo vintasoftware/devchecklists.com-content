@@ -1,5 +1,6 @@
 ---
 author_username: laisvarejao
+author_name: Lais Varejão
 category: Web
 color: ''
 description: A checklist we use here at Vinta to ensure high quality software at scale

@@ -1,5 +1,6 @@
 ---
 author_username: laisvarejao
+author_name: Lais Varejão
 category: Python
 color: ''
 description: A Django specific production checklist used at Vinta before launching

@@ -1,5 +1,6 @@
 ---
 author_username: robnff
+author_name: Robertson Novelino
 category: Agile Processes
 color: ''
 description: Checklist to avoid wasting time in meetings, focusing them on sharing

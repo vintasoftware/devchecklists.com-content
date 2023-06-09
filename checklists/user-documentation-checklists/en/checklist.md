@@ -1,5 +1,6 @@
 ---
 author_username: amandasavluchinske
+author_name: Amanda Savluchinske
 category: Project Management
 color: ''
 description: General guidelines on how to build awesome SaaS user documentation!

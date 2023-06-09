@@ -1,5 +1,6 @@
 ---
 author_username: lucabezerra
+author_name:  Luca Bezerra
 category: Agile Processes
 color: ''
 description: Do's and Don'ts for Pull Requests. Improve code quality and review speed.

@@ -1,5 +1,6 @@
 ---
 author_username: filipeximenes
+author_name:  Filipe Ximenes 
 category: Python
 color: ''
 description: Useful checklist for building great Celery tasks.

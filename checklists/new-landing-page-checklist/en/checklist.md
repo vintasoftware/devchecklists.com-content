@@ -1,5 +1,6 @@
 ---
 author_username: felipefarias
+author_name: Felipe Farias
 category: Product Metrics
 color: ''
 description: Landing pages are usually detached from the original flow of your homepage

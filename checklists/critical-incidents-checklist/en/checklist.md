@@ -1,5 +1,6 @@
 ---
 author_username: laisvarejao
+author_name: Lais Varejão
 category: Project Management
 color: '#46BCDF'
 description: Useful checklist for dealing with recovery crisis. Based on the talk
