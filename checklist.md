@@ -1,3 +1,16 @@
+---
+author_username: vinta
+author_name: Vinta Software
+category: Example
+color: ''
+description: Example checklist for devchecklists.com
+github_repository: https://github.com/vintasoftware/devchecklists.com-content
+tags:
+- example
+- docs
+title: Example for new checklists
+---
+
 ## 1. Allowed markdown syntaxes on Devchecklists
 
 * [ ] Github removes empty spaces when it compiles a markdown file. For a correct visualization of some pieces of code, please access the [raw version](https://raw.githubusercontent.com/vintasoftware/devchecklists.com-content/master/checklist-en.md) of this file.
