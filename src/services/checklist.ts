@@ -113,7 +113,7 @@ const rehypeFormatCheckboxes: Plugin = () => (tree) =>
             }
 
             // remark-gfm follows the Github default of creating all checkbox inputs as disabled
-            if (node.properties.disabled) {
+            if (checkbox.properties.disabled) {
                 checkbox.properties.disabled = false;
             }
 
