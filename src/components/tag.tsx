@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export const Tags = ({tags}: { tags: string[]}) => (
+export const Tags = ({ tags }: { tags: string[] }) => (
     <div className="flex flex-wrap gap-1">
-        {tags.map(tag => <Tag key={tag} tag={tag} />)}
+        {tags.map((tag) => (
+            <Tag key={tag} tag={tag} />
+        ))}
     </div>
-)
+);
 
 export const Tag = ({ tag }: { tag: string }) => (
     <Link
