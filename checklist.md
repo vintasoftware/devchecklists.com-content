@@ -1,5 +1,5 @@
 ---
-author_username: vinta
+author_username: vintasoftware
 author_name: Vinta Software
 category: Example
 color: ''
