@@ -10,6 +10,22 @@ module.exports = {
       'sans': ['Roboto', 'Arial', 'sans-serif'],
       'mono': ['Roboto Mono', 'monospace']
     },
+    colors: {
+      black: "#000000",
+      "light-black": "#15191C",
+      "dark-gray": "#22252A",
+      gray: "#2F3238",
+      "light-gray": "#888888",
+      "light-gray2": "#e2e2e2",
+      green: "#52D171",
+      "dark-green": "#2D8943",
+      blue: "#46BCDF",
+      "dark-blue": "#003366",
+      red: "#E95065",
+      pink: "#E91E63",
+      orange: "#E57251",
+      yellow: "#E3C551",
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

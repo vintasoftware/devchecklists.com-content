@@ -10,9 +10,11 @@ export const robotoMono = Roboto_Mono({ subsets: ["latin"], display: "swap" });
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className="bg-gray-900">
+            <body className="bg-light-black">
                 <Header />
-                {children}
+                <div className="max-w-5xl mx-auto min-h-screen">
+                    {children}
+                </div>
                 <Footer />
             </body>
         </html>

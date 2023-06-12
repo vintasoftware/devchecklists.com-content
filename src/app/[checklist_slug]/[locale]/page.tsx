@@ -1,6 +1,6 @@
 import { Avatar } from "@/components/avatar";
 import { ChecklistService } from "../../../services/checklist";
-import { Tag } from "@/components/tag";
+import { Tag, Tags } from "@/components/tag";
 import { CircleStackIcon } from "@heroicons/react/24/solid";
 import { Checklist } from "@/components/checklist";
 import { LocalesDropdown } from "@/components/localeDropdown";
@@ -40,8 +40,6 @@ const ChecklistPage = ({
         availableLocales,
     } = checklist;
 
-    const Tags = tags.map((tag) => <Tag key={tag} tag={tag} />);
-
     return (
         <div className="flex flex-col container mx-auto">
             <div className="flex justify-between">
@@ -59,25 +57,27 @@ const ChecklistPage = ({
                                     : "#"
                             }
                             target="_blank"
-                            className="flex gap-2"
+                            className="flex gap-2 text-blue items-center"
                         >
                             {author_username && (
-                                <Avatar username={author_username} />
+                                <Avatar username={author_username} size={35} />
                             )}
                             {author_name && <h5>{author_name}</h5>}
                         </a>
                     </div>
-                    <h5 className="text-gray-500">{description}</h5>
-                    <div>{Tags}</div>
-                    <div className="flex text-blue-400 gap-2 items-center">
+                    <h5 className="text-light-gray">{description}</h5>
+                    <Tags tags={tags} />
+                    <div className="flex text-blue gap-2 items-center">
                         <CircleStackIcon title="Storage" className="h-4" />
-                        <h5>Checks are saved in your local storage</h5>
+                        <h5>Checks are saved to your local storage</h5>
                     </div>
                 </div>
-                <LocalesDropdown availableLocales={availableLocales} />
+                <div className="mt-10">
+                    <LocalesDropdown availableLocales={availableLocales} />
+                    </div>
             </div>
 
-            <article className="prose prose-invert prose-ul:list-none max-w-3xl px-10 py-4 bg-gray-900 rounded-md">
+            <article className="prose prose-invert prose-ul:list-none max-w-3xl px-10 py-4 bg-dark-gray rounded-md">
                 <Checklist checklistHTML={checklist.contentHtml} />
             </article>
         </div>

@@ -3,14 +3,14 @@ import { Card } from "./card";
 
 export interface CardListProps {
     listName: string;
-    listNameLink?: string;
+    listLink?: string;
     checklists: Checklist[];
     oneRow?: boolean;
 }
 
 export const CardList = ({
     listName,
-    listNameLink,
+    listLink,
     checklists,
     oneRow = true,
 }: CardListProps) => {
@@ -20,10 +20,9 @@ export const CardList = ({
 
     return (
         <div className="container">
-            <a href={listNameLink}>
+            <a href={listLink}>
                 <h2 className="my-8 text-3xl font-medium">{listName}</h2>
             </a>
-            {/* TODO: See all */}
 
             <div
                 className={`flex ${oneRow ? "overflow-x-scroll" : "flex-wrap"}`}

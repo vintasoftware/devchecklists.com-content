@@ -2,13 +2,13 @@ import Image from "next/image";
 import { Checklist } from "../services/checklist";
 import { Avatar } from "./avatar";
 import IconSocialGithub from "@/images/icon-social-github.png";
-import { Tag } from "./tag";
+import { Tags } from "./tag";
 
 export const Card = ({ checklist }: { checklist: Checklist }) => {
     const {
+        slug,
         frontmatter: {
             title,
-            slug,
             author_username,
             github_repository,
             description,
@@ -16,11 +16,9 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
         },
     } = checklist;
 
-    const Tags = tags.map((tag) => <Tag key={tag} tag={tag} />);
-
     return (
-        <div className="flex flex-col shrink-0 w-96 rounded-md bg-gray-900 m-4">
-            <div className="flex justify-between rounded-t-md bg-blue-400 text-slate-950 p-4">
+        <div className="flex flex-col shrink-0 w-96 rounded-md bg-dark-gray m-4">
+            <div className="flex justify-between rounded-t-md bg-blue text-black p-4">
                 <div className="flex flex-col">
                     <a href={`/${slug}/en/`}>
                         <h3 className="text-2xl">{title}</h3>
@@ -48,8 +46,8 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
                 )}
             </div>
             <div className="p-4">
-                <h5 className="m-2">{description}</h5>
-                <div className="flex flex-wrap gap-1">{Tags}</div>
+                <h5 className="m-2 text-light-gray">{description}</h5>
+                <Tags tags={tags} />
             </div>
         </div>
     );

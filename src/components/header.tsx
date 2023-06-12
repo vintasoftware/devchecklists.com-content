@@ -3,7 +3,7 @@ import Logo from "@/images/logo.png";
 
 export const Header = () => {
     return (
-        <header className="flex justify-center border-bottom border-black bg-gray-800 p-4">
+        <header className="flex justify-center border-bottom border-black bg-dark-gray p-4">
             <nav className="flex container justify-between items-center h-16">
                 <a href="/">
                     <Image src={Logo} alt="Devchecklists logo" width={180} />
@@ -11,7 +11,7 @@ export const Header = () => {
                 <a
                     href="https://github.com/vintasoftware/devchecklists.com-content/collaborate.md"
                     target="_blank"
-                    className="rounded border-2 border-b-8 font-mono text-gray-900 bg-lime-400 border-lime-800 px-2 py-3"
+                    className="rounded border-2 border-b-8 font-mono text-dark-gray bg-green border-dark-green px-2 py-3"
                 >
                     + Collaborate
                 </a>
