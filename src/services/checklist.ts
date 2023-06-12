@@ -94,21 +94,42 @@ const rehypeWrapCheckItemInLabel: Plugin = () => (tree) =>
                 return;
             }
 
-            const [checkbox, ...children] = node.children;
-            if (checkbox.type !== "element") {
+            const [firstChildren, secondChildren] = node.children;
+            let checkbox, children;
+
+            if (
+                firstChildren.type === "text" &&
+                secondChildren.type === "element" &&
+                secondChildren.tagName === "p"
+            ) {
+                // Sometimes we get the checkbox and text wrapped in a `<p>` tag
+                [checkbox, ...children] = secondChildren.children;
+            } else if (
+                firstChildren.type === "element" &&
+                firstChildren.tagName === "input"
+            ) {
+                // Sometimes we get the checkbox and text directly inside the .task-list-item
+                [checkbox, ...children] = node.children;
+            } else {
+                console.warn("Found unknown DOM inside .tag-list-item", {
+                    elements: node.children,
+                });
                 return;
             }
 
-            const textChildren = children.filter(
+            const elementsToBeWrappedInLabel = children.filter(
                 (child: any) => child.tagName !== "ul"
             );
             const subList = children.filter(
                 (child: any) => child.tagName == "ul"
             );
 
+            // If the checkbox doesn't have an id, generate one
             if (!checkbox.properties.id) {
                 checkbox.properties.id = generateSlug(
-                    textChildren.map((text: any) => text.value).join()
+                    elementsToBeWrappedInLabel
+                        .map((text: any) => text.value)
+                        .join()
                 );
             }
 
@@ -118,7 +139,7 @@ const rehypeWrapCheckItemInLabel: Plugin = () => (tree) =>
                     type: "element",
                     tagName: "label",
                     properties: { for: checkbox.properties.id },
-                    children: textChildren,
+                    children: elementsToBeWrappedInLabel,
                 },
                 ...subList,
             ];
@@ -230,7 +251,8 @@ export class ChecklistService {
                 // Skip other files
                 if (checklistFileStat.isDirectory()) {
                     console.debug(
-                        "Found folder inside a checklist folder - ignoring"
+                        "Found folder inside a checklist folder - ignoring",
+                        { folder: checklistFilePath }
                     );
                     continue;
                 }
