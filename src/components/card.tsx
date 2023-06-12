@@ -3,6 +3,7 @@ import { Checklist } from "../services/checklist";
 import { Avatar } from "./avatar";
 import IconSocialGithub from "@/images/icon-social-github.png";
 import { Tags } from "./tag";
+import Link from "next/link";
 
 export const Card = ({ checklist }: { checklist: Checklist }) => {
     const {
@@ -20,11 +21,11 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
         <div className="flex flex-col shrink-0 w-96 rounded-md bg-dark-gray m-4">
             <div className="flex justify-between rounded-t-md bg-blue text-black p-4">
                 <div className="flex flex-col">
-                    <a href={`/${slug}/en/`}>
+                    <Link href={`/${slug}/en/`}>
                         <h3 className="text-2xl">{title}</h3>
-                    </a>
+                    </Link>
                     {author_username && (
-                        <a
+                        <Link
                             href={`https://github.com/${author_username}`}
                             target="_blank"
                             className="flex items-center mt-4"
@@ -33,16 +34,16 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
                             <h6 className="ml-2 text-xs font-bold">
                                 {author_username}
                             </h6>
-                        </a>
+                        </Link>
                     )}
                 </div>
                 {github_repository && (
-                    <a
+                    <Link
                         href={`https://github.com/vintasoftware/${github_repository}`}
                         target="_blank"
                     >
                         <Image src={IconSocialGithub} alt="github logo" />
-                    </a>
+                    </Link>
                 )}
             </div>
             <div className="p-6">

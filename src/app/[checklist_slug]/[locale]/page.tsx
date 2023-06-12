@@ -1,9 +1,11 @@
 import { Avatar } from "@/components/avatar";
 import { ChecklistService } from "../../../services/checklist";
-import { Tag, Tags } from "@/components/tag";
+import { Tags } from "@/components/tag";
 import { CircleStackIcon } from "@heroicons/react/24/solid";
 import { Checklist } from "@/components/checklist";
 import { LocalesDropdown } from "@/components/localeDropdown";
+import Link from "next/link";
+import { Metadata } from "next";
 
 interface ChecklistParam {
     checklist_slug: string;
@@ -19,6 +21,24 @@ export const generateStaticParams = (): ChecklistParam[] => {
         locale,
     }));
 };
+
+// Generate the page metadata
+export async function generateMetadata({
+    params: { checklist_slug: slug, locale },
+}: {
+    params: ChecklistParam;
+}): Promise<Metadata> {
+    const checklist = ChecklistService.getInstance().getChecklistData(
+        slug,
+        locale
+    );
+
+    return {
+        title: `DevChecklists | ${checklist.frontmatter.title ?? ""}`,
+        description: checklist.frontmatter.description,
+        keywords: checklist.frontmatter.tags,
+    };
+}
 
 const ChecklistPage = ({
     params: { checklist_slug: slug, locale },
@@ -50,7 +70,7 @@ const ChecklistPage = ({
                         )}
                     </div>
                     <div className="checklist-author">
-                        <a
+                        <Link
                             href={
                                 author_username
                                     ? `https://github.com/${author_username}/`
@@ -63,7 +83,7 @@ const ChecklistPage = ({
                                 <Avatar username={author_username} size={35} />
                             )}
                             {author_name && <h5>{author_name}</h5>}
-                        </a>
+                        </Link>
                     </div>
                     <h5 className="text-light-gray">{description}</h5>
                     <Tags tags={tags} />
@@ -74,7 +94,7 @@ const ChecklistPage = ({
                 </div>
                 <div className="mt-10">
                     <LocalesDropdown availableLocales={availableLocales} />
-                    </div>
+                </div>
             </div>
 
             <article className="prose prose-invert prose-ul:list-none max-w-3xl px-10 py-4 bg-dark-gray rounded-md">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Checklist } from "../services/checklist";
 import { Card } from "./card";
 
@@ -10,7 +11,7 @@ export interface CardListProps {
 
 export const CardList = ({
     listName,
-    listLink,
+    listLink = "",
     checklists,
     oneRow = true,
 }: CardListProps) => {
@@ -20,9 +21,9 @@ export const CardList = ({
 
     return (
         <div className="container">
-            <a href={listLink}>
+            <Link href={listLink}>
                 <h2 className="my-8 text-3xl font-medium">{listName}</h2>
-            </a>
+            </Link>
 
             <div
                 className={`flex ${oneRow ? "overflow-x-scroll" : "flex-wrap"}`}

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface LocalesDropdownProps {
     availableLocales: string[];
 }
@@ -13,7 +15,7 @@ export const LocalesDropdown = ({ availableLocales }: LocalesDropdownProps) => {
             <ul className="p-2 shadow">
                 {availableLocales.map((locale) => (
                     <li key={locale}>
-                        <a href={`${locale}`}>{locale}</a>
+                        <Link href={`${locale}`}>{locale}</Link>
                     </li>
                 ))}
             </ul>
