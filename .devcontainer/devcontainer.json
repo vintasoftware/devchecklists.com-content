@@ -1,0 +1,24 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {}
+    },
+    "postCreateCommand": "npm install",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bradlc.vscode-tailwindcss",
+                "christian-kohler.path-intellisense",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "github.vscode-github-actions",
+                "ms-vscode-remote.remote-containers",
+                "naumovs.color-highlight",
+                "visualstudioexptteam.vscodeintellicode",
+                "bierner.markdown-preview-github-styles",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    },
+    "forwardPorts": [3000]
+}
