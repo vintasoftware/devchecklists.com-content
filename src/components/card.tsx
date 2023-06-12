@@ -19,10 +19,10 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
 
     return (
         <div className="flex flex-col shrink-0 w-96 rounded-md bg-dark-gray m-4">
-            <div className="flex justify-between rounded-t-md bg-blue text-black p-4">
-                <div className="flex flex-col">
+            <div className="flex justify-between rounded-t-md bg-blue text-black p-4 h-32">
+                <div className="flex flex-col justify-between">
                     <Link href={`/${slug}/en/`}>
-                        <h3 className="text-2xl">{title}</h3>
+                        <h3 className="text-2xl line-clamp-2">{title}</h3>
                     </Link>
                     {author_username && (
                         <Link
@@ -46,8 +46,8 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
                     </Link>
                 )}
             </div>
-            <div className="p-6">
-                <h5 className="text-light-gray">{description}</h5>
+            <div className="flex flex-col justify-between p-6 h-60">
+                <h5 className="text-light-gray line-clamp-5">{description}</h5>
                 <Tags tags={tags} />
             </div>
         </div>
