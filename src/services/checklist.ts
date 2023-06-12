@@ -191,7 +191,7 @@ export class ChecklistService {
     formatChecklist = (checklist: Checklist) => {};
 
     private getLocaleFromChecklistFilename = (filename: string) => {
-        const CHECKLIST_FILE_NAME_PATTERN = /^checklist\.([a-z]+)\.md$/;
+        const CHECKLIST_FILE_NAME_PATTERN = /^checklist\.([a-z\-\_]+)\.md$/;
 
         const match = filename.match(CHECKLIST_FILE_NAME_PATTERN);
 
