@@ -9,11 +9,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            # Setup and install Python and its dependencies
-            - uses: actions/setup-python@v3
-              with:
-                  python-version: 3.11.3
-            - run: pip install -r requirements-dev.txt
             # Setup and installl Node and JS dependencies
             - uses: actions/setup-node@v3
               with:
