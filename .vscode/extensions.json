@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.path-intellisense",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "github.vscode-github-actions",
+        "ms-vscode-remote.remote-containers",
+        "naumovs.color-highlight",
+        "visualstudioexptteam.vscodeintellicode",
+        "yzhang.markdown-all-in-one"
+    ]
+}
