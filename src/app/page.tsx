@@ -25,8 +25,8 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
     );
 
     return (
-        <>
-            <div className="float-right">
+        <div className="flex flex-col">
+            <div className="ml-auto">
                 <LocalesDropdown availableLocales={allAvailableLocales} />
             </div>
             <div className="flex justify-between items-center my-28">
@@ -45,11 +45,15 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
                         <span className="text-green">;-)</span>
                     </h5>
                 </div>
-                <Image src={ChecklistBoard} alt="checklist board" />
+                <Image
+                    src={ChecklistBoard}
+                    alt="checklist board"
+                    priority={true}
+                />
             </div>
 
             {Categories}
-        </>
+        </div>
     );
 };
 
