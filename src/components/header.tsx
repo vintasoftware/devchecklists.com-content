@@ -12,7 +12,7 @@ export const Header = () => {
                 <Link
                     href="https://github.com/vintasoftware/devchecklists.com-content/collaborate.md"
                     target="_blank"
-                    className="rounded border-2 border-b-8 font-mono text-dark-gray bg-green border-dark-green px-2 py-3"
+                    className="rounded flex-shrink-0 border-2 border-b-8 font-mono text-dark-gray bg-green border-dark-green px-2 py-3"
                 >
                     + Collaborate
                 </Link>

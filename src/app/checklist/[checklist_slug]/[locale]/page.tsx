@@ -86,8 +86,14 @@ const ChecklistPage = ({
                 dangerouslySetInnerHTML={generateJSONLD(checklist)}
             />
             <div className="flex flex-col container mx-auto">
-                <div className="flex justify-between">
-                    <div className="flex flex-col gap-4 my-10">
+                <div className="flex flex-col md:flex-row justify-between">
+                    <div className="mt-10 order-1 md:order-2">
+                        <LocalesDropdown
+                            availableLocales={availableLocales}
+                            hrefPrefix={`/checklist/${slug}/`}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-4 my-10 order-2 md:order-1">
                         <div className="flex justify-between">
                             {title && (
                                 <h2 className="text-4xl font-mono">{title}</h2>
@@ -118,12 +124,6 @@ const ChecklistPage = ({
                             <CircleStackIcon title="Storage" className="h-4" />
                             <h5>Checks are saved to your local storage</h5>
                         </div>
-                    </div>
-                    <div className="mt-10">
-                        <LocalesDropdown
-                            availableLocales={availableLocales}
-                            hrefPrefix={`/checklist/${slug}/`}
-                        />
                     </div>
                 </div>
 

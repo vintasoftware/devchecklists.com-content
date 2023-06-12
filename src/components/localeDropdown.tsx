@@ -16,7 +16,7 @@ export const LocalesDropdown = ({
     return (
         <details className="h-6">
             <summary className="m-1 open:bg-light-black">Languages</summary>
-            <ul className="p-2 shadow bg-light-black">
+            <ul className="p-2 shadow bg-light-black relative z-10">
                 {availableLocales.map((locale) => (
                     <li key={locale}>
                         <Link href={`${hrefPrefix}${locale}`}>{locale}</Link>

@@ -29,7 +29,7 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
             <div className="ml-auto">
                 <LocalesDropdown availableLocales={allAvailableLocales} />
             </div>
-            <div className="flex justify-between items-center my-28">
+            <div className="flex flex-col md:flex-row justify-between items-center my-28">
                 <div className="max-w-xl">
                     <h1 className="text-4xl font-mono">
                         Always deliver your very best,{" "}

@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export const Footer = () => {
     return (
-        <footer className="h-52 bg-dark-gray text-white mt-8">
-            <div className="flex justify-between items-center container h-full mx-auto">
+        <footer className="md:h-52 bg-dark-gray text-white mt-8">
+            <div className="flex flex-col md:flex-row gap-4 justify-between items-center container h-full mx-auto">
                 <div className="flex flex-col">
                     <h5 className="pb-4 font-mono">
                         made with <span className="text-red">❤︎</span> by
