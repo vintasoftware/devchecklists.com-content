@@ -4,9 +4,9 @@ import { useLayoutEffect } from "react";
 
 function updateCheckboxUI(checkbox: HTMLInputElement) {
     if (checkbox.checked) {
-        checkbox.parentElement!.classList.add("line-through");
+        checkbox.nextElementSibling!.classList.add("line-through");
     } else {
-        checkbox.parentElement!.classList.remove("line-through");
+        checkbox.nextElementSibling!.classList.remove("line-through");
     }
 }
 
@@ -46,7 +46,6 @@ function saveCheckboxState(checkboxId: string, checkboxState: boolean) {
 
 // Event listener for checkbox changes
 function handleCheckboxChange(event: Event) {
-    console.log("handleCheckboxChange");
     const checkbox = event.target! as HTMLInputElement;
     const checkboxId = checkbox.id;
     const checkboxState = checkbox.checked;
@@ -64,6 +63,7 @@ function handleCheckboxChange(event: Event) {
         sublistCheckboxes.forEach((subCheckbox) => {
             subCheckbox.checked = checkboxState;
             saveCheckboxState(subCheckbox.id, checkboxState);
+            updateCheckboxUI(subCheckbox);
         });
     }
 
@@ -75,8 +75,6 @@ function attachCheckboxListeners() {
     const checkboxes: NodeListOf<HTMLInputElement> = document.querySelectorAll(
         "input[type=checkbox]"
     );
-
-    console.log({ checkboxes });
 
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", handleCheckboxChange);
