@@ -46,7 +46,7 @@ export async function generateMetadata({
 
 // Used to provide rich results for search engines
 // https://developers.google.com/search/docs/appearance/structured-data/how-to
-export function generateJSONLD(checklist: IChecklist) {
+function generateJSONLD(checklist: IChecklist) {
     return {
         __html: JSON.stringify({
             "@context": "https://schema.org",
