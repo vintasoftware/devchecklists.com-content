@@ -5,7 +5,13 @@ import IconSocialGithub from "@/images/icon-social-github.png";
 import { Tags } from "./tag";
 import Link from "next/link";
 
-export const Card = ({ checklist }: { checklist: Checklist }) => {
+export const Card = ({
+    checklist,
+    locale = "en",
+}: {
+    checklist: Checklist;
+    locale?: string;
+}) => {
     const {
         slug,
         frontmatter: {
@@ -21,7 +27,7 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
         <div className="flex flex-col shrink-0 w-96 rounded-md bg-dark-gray m-4">
             <div className="flex justify-between rounded-t-md bg-blue text-black p-4 h-32">
                 <div className="flex flex-col justify-between">
-                    <Link href={`/${slug}/en/`}>
+                    <Link href={`checklist/${slug}/${locale}/`}>
                         <h3 className="text-2xl line-clamp-2">{title}</h3>
                     </Link>
                     {author_username && (

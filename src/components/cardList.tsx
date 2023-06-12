@@ -6,6 +6,7 @@ export interface CardListProps {
     listName: string;
     listLink?: string;
     checklists: Checklist[];
+    locale?: string;
     oneRow?: boolean;
 }
 
@@ -13,10 +14,11 @@ export const CardList = ({
     listName,
     listLink = "",
     checklists,
+    locale = "en",
     oneRow = true,
 }: CardListProps) => {
     const Checklists = checklists.map((checklist) => (
-        <Card key={checklist.slug} checklist={checklist} />
+        <Card key={checklist.slug} checklist={checklist} locale={locale} />
     ));
 
     return (

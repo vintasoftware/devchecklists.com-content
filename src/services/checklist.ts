@@ -40,7 +40,7 @@ export interface Checklist {
 }
 
 // Based on https://github.com/phuctm97/remark-parse-frontmatter
-// Adds frontmatter metadata to file.data.frontmatter so we can pass it on
+// Adds frontmatter metadata to file.data.frontmatter so we can use it later
 export const remarkParseFrontmatter: Plugin = () => (tree, file) => {
     const node = find(tree, { type: "yaml" });
     if (!node) {
@@ -60,29 +60,8 @@ export const remarkParseFrontmatter: Plugin = () => (tree, file) => {
     data.frontmatter = frontmatter;
 };
 
-// From https://github.com/remarkjs/remark-gfm/issues/41#issuecomment-1267369148
-// remark-gfm follows the Github default of creating all checkbox inputs as disabled
-// This plugin enables all checkboxes
-export const rehypeEnableCheckboxes: Plugin = () => (tree) =>
-    visit(
-        tree,
-        {
-            type: "element",
-            tagName: "input",
-        },
-        (node: any) => {
-            if (
-                node.properties &&
-                node.properties.type === "checkbox" &&
-                node.properties.disabled
-            ) {
-                node.properties.disabled = false;
-            }
-        }
-    );
-
 // Wraps the text that follows a checkbox in a label so we can click on the text to change the checkbox state
-const rehypeWrapCheckItemInLabel: Plugin = () => (tree) =>
+const rehypeFormatCheckboxes: Plugin = () => (tree) =>
     visit(
         tree,
         {
@@ -131,6 +110,11 @@ const rehypeWrapCheckItemInLabel: Plugin = () => (tree) =>
                         .map((text: any) => text.value)
                         .join()
                 );
+            }
+
+            // remark-gfm follows the Github default of creating all checkbox inputs as disabled
+            if (node.properties.disabled) {
+                checkbox.properties.disabled = false;
             }
 
             node.children = [
@@ -188,8 +172,7 @@ export class ChecklistService {
             .use(remarkParseFrontmatter)
             .use(remarkGfm)
             .use(remarkRehype)
-            .use(rehypeEnableCheckboxes)
-            .use(rehypeWrapCheckItemInLabel)
+            .use(rehypeFormatCheckboxes)
             .use(rehypeSlug)
             .use(rehypeStringify)
             .processSync(fileContents);
@@ -320,16 +303,21 @@ export class ChecklistService {
         return this.checklists;
     };
 
-    public getChecklistsGroupedByCategory = () => {
+    public getChecklistsGroupedByCategory = (locale: string) => {
         const checklists = this.getChecklists();
 
         // Groups categories in a object like { "Category Name": [ Checklist1, Checklist2 ]}
         return checklists.reduce((grouped, checklist) => {
+            if (checklist.locale !== locale) {
+                return grouped;
+            }
+
             const category = checklist.frontmatter.category ?? NO_CATEGORY;
 
             if (!grouped[category]) {
                 grouped[category] = [];
             }
+
             grouped[category].push(checklist);
 
             return grouped;

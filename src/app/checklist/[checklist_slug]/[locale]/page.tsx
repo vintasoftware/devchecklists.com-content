@@ -1,5 +1,5 @@
 import { Avatar } from "@/components/avatar";
-import { ChecklistService } from "../../../services/checklist";
+import { ChecklistService } from "@/services/checklist";
 import { Tags } from "@/components/tag";
 import { CircleStackIcon } from "@heroicons/react/24/solid";
 import { Checklist } from "@/components/checklist";
@@ -93,7 +93,10 @@ const ChecklistPage = ({
                     </div>
                 </div>
                 <div className="mt-10">
-                    <LocalesDropdown availableLocales={availableLocales} />
+                    <LocalesDropdown
+                        availableLocales={availableLocales}
+                        hrefPrefix={`/checklist/${slug}/`}
+                    />
                 </div>
             </div>
 

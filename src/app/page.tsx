@@ -3,11 +3,14 @@ import { ChecklistService } from "../services/checklist";
 import ChecklistBoard from "@/images/checklist-board.png";
 import { CardList } from "../components/cardList";
 import { generateSlug } from "./utils";
+import { LocalesDropdown } from "@/components/localeDropdown";
 
-const HomePage = () => {
+const HomePage = ({ locale = "en" }: { locale: string }) => {
     const checklistService = ChecklistService.getInstance();
 
-    const checklists = checklistService.getChecklistsGroupedByCategory();
+    const checklists =
+        ChecklistService.getInstance().getChecklistsGroupedByCategory(locale);
+    const allAvailableLocales = checklistService.getAllChecklistLocales();
 
     const Categories = Object.entries(checklists).map(
         ([categoryName, checklists]) => (
@@ -16,12 +19,16 @@ const HomePage = () => {
                 listName={categoryName}
                 listLink={`/category/${generateSlug(categoryName)}`}
                 checklists={checklists}
+                locale={locale}
             />
         )
     );
 
     return (
         <>
+            <div className="float-right">
+                <LocalesDropdown availableLocales={allAvailableLocales} />
+            </div>
             <div className="flex justify-between items-center my-28">
                 <div className="max-w-xl">
                     <h1 className="text-4xl font-mono">
