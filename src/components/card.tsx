@@ -45,8 +45,8 @@ export const Card = ({ checklist }: { checklist: Checklist }) => {
                     </a>
                 )}
             </div>
-            <div className="p-4">
-                <h5 className="m-2 text-light-gray">{description}</h5>
+            <div className="p-6">
+                <h5 className="text-light-gray">{description}</h5>
                 <Tags tags={tags} />
             </div>
         </div>
