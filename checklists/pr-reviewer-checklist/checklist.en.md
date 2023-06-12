@@ -2,20 +2,22 @@
 author_username: laisvarejao
 author_name: Lais Varejão
 category: Agile Processes
-color: ''
-description: Set of guidelines for PR reviewers to guarantee a more civilized approach
+color: ""
+description:
+  Set of guidelines for PR reviewers to guarantee a more civilized approach
   and avoid creating a toxic feedback culture.
 github_repository: https://github.com/vintasoftware/pr-reviewer-checklist
 tags:
-- development-workflow
-- pull-requests
-title: 'PR: Reviewer Checklist'
+  - development-workflow
+  - pull-requests
+title: "PR: Reviewer Checklist"
 ---
+
 ## Pull request review workflow
 
 - [ ] Review the PR ASAP after being allocated to it.
 - [ ] Run code and use it as the end user would. Double check requests in feature’s description.
-- [ ] After exploring feature from your own expectations, review the "QA checklist" created by the feature’s developer in the feature card. Work on whatever hasn’t been covered. 
+- [ ] After exploring feature from your own expectations, review the "QA checklist" created by the feature’s developer in the feature card. Work on whatever hasn’t been covered.
 - [ ] If feature behavior is wrong, don't review code yet. Allocate PR back to developer and describe, in detail, correct feature behavior. Describe meticulously, providing screenshots and flows if applicable. Miscommunication led to misunderstanding, therefore you need to invest time in describing it better now. After explaining the issue again, mention the original issue's author for her/him to know what was done wrong.
 - [ ] Review code. Use same process described [here](https://devchecklists.com/pull-requests-checklist/).
 

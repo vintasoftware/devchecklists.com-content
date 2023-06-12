@@ -2,41 +2,52 @@
 author_username: vintasoftware
 author_name: Vinta Software
 category: Example
-color: ''
+color: ""
 description: Example checklist for devchecklists.com
 github_repository: https://github.com/vintasoftware/devchecklists.com-content
 tags:
-- example
-- docs
+  - example
+  - docs
 title: Example for new checklists
 ---
 
 ## 1. Allowed markdown syntaxes on Devchecklists
 
-* [ ] Github removes empty spaces when it compiles a markdown file. For a correct visualization of some pieces of code, please access the [raw version](https://raw.githubusercontent.com/vintasoftware/devchecklists.com-content/master/checklist-en.md) of this file.
-* [ ] `##` for titles.
-* [ ] `* [ ]` syntax to create a parent checklist.
-* [ ] `    * [ ]` syntax to create a second-level checklist.
-* [ ] `    * E.g.` syntax to create a second-level sample.
-* [ ] `      * E.g.` syntax to create a third-level sample.
-* [ ] Syntax for a simple piece of code `This is code`.
-* [ ] Syntax for code blocks:
-  * ```
+- [ ] Github removes empty spaces when it compiles a markdown file. For a correct visualization of some pieces of code, please access the [raw version](https://raw.githubusercontent.com/vintasoftware/devchecklists.com-content/master/checklist-en.md) of this file.
+- [ ] `##` for titles.
+- [ ] `* [ ]` syntax to create a parent checklist.
+- [ ] `    * [ ]` syntax to create a second-level checklist.
+- [ ] `    * E.g.` syntax to create a second-level sample.
+- [ ] `      * E.g.` syntax to create a third-level sample.
+- [ ] Syntax for a simple piece of code `This is code`.
+- [ ] Syntax for code blocks:
+  - ```
     # Code Block:
-    This is a 
-    piece of code 
+    This is a
+    piece of code
     in a block
-  ```
+    ```
 
 ## 2. Syntaxes to avoid
 
-* [ ] `      * [ ]` third-level checklists.
-* [ ] `![Alt](/image.png "Image")` images.
-* [ ] Header syntaxes besides `## Header 2`:
-  *  ```
-    # Header 1
-    ### Header 3
-    #### Header 4
-    ##### Header 5
-    ###### Header 6 
+- [ ] `      * [ ]` third-level checklists.
+- [ ] `![Alt](/image.png "Image")` images.
+- [ ] Header syntaxes besides `## Header 2`:
+
+  - ```
+
     ```
+
+  # Header 1
+
+  ### Header 3
+
+  #### Header 4
+
+  ##### Header 5
+
+  ###### Header 6
+
+  ```
+
+  ```
