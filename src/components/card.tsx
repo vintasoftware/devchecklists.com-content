@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Checklist } from "../services/checklist";
 import { Avatar } from "./avatar";
-import IconSocialGithub from "@/images/icon-social-github.png";
+import GithubIcon from "@/images/github-logo.svg";
 import { Tags } from "./tag";
 import Link from "next/link";
 
@@ -45,7 +45,12 @@ export const Card = ({
                 </div>
                 {github_repository && (
                     <Link href={github_repository} target="_blank">
-                        <Image src={IconSocialGithub} alt="github logo" />
+                        <Image
+                            src={GithubIcon}
+                            alt="github logo"
+                            width={30}
+                            height={30}
+                        />
                     </Link>
                 )}
             </div>
