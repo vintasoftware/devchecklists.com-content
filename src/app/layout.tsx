@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     ></iframe>
                 </noscript>
                 <Header />
-                <div className="max-w-5xl mx-auto min-h-screen">{children}</div>
+                <div className="mx-auto min-h-screen max-w-5xl">{children}</div>
                 <Footer />
             </body>
         </html>

@@ -10,7 +10,7 @@ export const Tags = ({ tags }: { tags: string[] }) => (
 
 export const Tag = ({ tag }: { tag: string }) => (
     <Link
-        className="rounded shrink-0 mt-2 p-1 font-mono font-bold text-xs bg-blue text-black"
+        className="mt-2 shrink-0 rounded bg-blue p-1 font-mono text-xs font-bold text-black"
         href={`/tag/${tag}`}
     >
         {tag};

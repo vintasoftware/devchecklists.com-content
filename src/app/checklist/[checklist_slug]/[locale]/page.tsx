@@ -85,18 +85,18 @@ const ChecklistPage = ({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={generateJSONLD(checklist)}
             />
-            <div className="flex flex-col container mx-auto">
-                <div className="flex flex-col md:flex-row justify-between">
-                    <div className="mt-10 order-1 md:order-2">
+            <div className="container mx-auto flex flex-col">
+                <div className="flex flex-col justify-between md:flex-row">
+                    <div className="order-1 mt-10 md:order-2">
                         <LocalesDropdown
                             availableLocales={availableLocales}
                             hrefPrefix={`/checklist/${slug}/`}
                         />
                     </div>
-                    <div className="flex flex-col gap-4 my-10 order-2 md:order-1">
+                    <div className="order-2 my-10 flex flex-col gap-4 md:order-1">
                         <div className="flex justify-between">
                             {title && (
-                                <h2 className="text-4xl font-mono">{title}</h2>
+                                <h2 className="font-mono text-4xl">{title}</h2>
                             )}
                         </div>
                         <div className="checklist-author">
@@ -107,7 +107,7 @@ const ChecklistPage = ({
                                         : "#"
                                 }
                                 target="_blank"
-                                className="flex gap-2 text-blue items-center"
+                                className="flex items-center gap-2 text-blue"
                             >
                                 {author_username && (
                                     <Avatar
@@ -120,14 +120,14 @@ const ChecklistPage = ({
                         </div>
                         <h5 className="text-light-gray">{description}</h5>
                         <Tags tags={tags} />
-                        <div className="flex text-blue gap-2 items-center">
+                        <div className="flex items-center gap-2 text-blue">
                             <CircleStackIcon title="Storage" className="h-4" />
                             <h5>Checks are saved to your local storage</h5>
                         </div>
                     </div>
                 </div>
 
-                <article className="prose prose-invert prose-ul:list-none max-w-3xl px-10 py-4 bg-dark-gray rounded-md">
+                <article className="prose prose-invert max-w-3xl rounded-md bg-dark-gray px-10 py-4 prose-ul:list-none">
                     <Checklist checklistHTML={checklist.contentHtml} />
                 </article>
             </div>

@@ -29,13 +29,13 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
             <div className="ml-auto">
                 <LocalesDropdown availableLocales={allAvailableLocales} />
             </div>
-            <div className="flex flex-col md:flex-row justify-between items-center my-28">
+            <div className="my-28 flex flex-col items-center justify-between md:flex-row">
                 <div className="max-w-xl">
-                    <h1 className="text-4xl font-mono">
+                    <h1 className="font-mono text-4xl">
                         Always deliver your very best,{" "}
                         <span className="text-green">always check</span>
                     </h1>
-                    <h5 className="max-w-md mt-12">
+                    <h5 className="mt-12 max-w-md">
                         We created this{" "}
                         <span className="text-green">
                             collaborative space for sharing checklists

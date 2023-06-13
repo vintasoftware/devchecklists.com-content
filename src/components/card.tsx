@@ -24,17 +24,17 @@ export const Card = ({
     } = checklist;
 
     return (
-        <div className="flex flex-col shrink-0 w-96 rounded-md bg-dark-gray m-4">
-            <div className="flex justify-between rounded-t-md bg-blue text-black p-4 h-32">
+        <div className="m-4 flex w-96 shrink-0 flex-col rounded-md bg-dark-gray">
+            <div className="flex h-32 justify-between rounded-t-md bg-blue p-4 text-black">
                 <div className="flex flex-col justify-between">
                     <Link href={`checklist/${slug}/${locale}/`}>
-                        <h3 className="text-2xl line-clamp-2">{title}</h3>
+                        <h3 className="line-clamp-2 text-2xl">{title}</h3>
                     </Link>
                     {author_username && (
                         <Link
                             href={`https://github.com/${author_username}`}
                             target="_blank"
-                            className="flex items-center mt-4"
+                            className="mt-4 flex items-center"
                         >
                             <Avatar username={author_username} />
                             <h6 className="ml-2 text-xs font-bold">
@@ -54,8 +54,8 @@ export const Card = ({
                     </Link>
                 )}
             </div>
-            <div className="flex flex-col justify-between p-6 h-60">
-                <h5 className="text-light-gray line-clamp-5">{description}</h5>
+            <div className="flex h-60 flex-col justify-between p-6">
+                <h5 className="line-clamp-5 text-light-gray">{description}</h5>
                 <Tags tags={tags} />
             </div>
         </div>
