@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export const Footer = () => {
     return (
-        <footer className="text-white mt-8 bg-dark-gray md:h-52">
-            <div className="container mx-auto flex h-full flex-col items-center justify-between gap-4 md:flex-row">
+        <footer className="text-white mt-8 bg-dark-gray">
+            <div className="container mx-auto flex h-full flex-col items-center justify-between gap-12 px-4 py-8 md:flex-row">
                 <div className="flex flex-col">
                     <h5 className="pb-4 font-mono">
                         made with <span className="text-red">❤︎</span> by
@@ -25,7 +25,7 @@ export const Footer = () => {
                         <Image src={NextLogo} height={42} alt="Next Logo" />
                     </Link>
                 </div>
-                <h5 className="max-w-sm text-right text-light-gray">
+                <h5 className="max-w-sm text-center text-light-gray md:text-right">
                     Those checklists are used in Vinta&apos;s projects and we
                     are always looking for exciting work. So, if want to know us
                     better feel free to{" "}

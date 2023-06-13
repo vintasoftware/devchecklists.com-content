@@ -29,8 +29,8 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
             <div className="ml-auto">
                 <LocalesDropdown availableLocales={allAvailableLocales} />
             </div>
-            <div className="my-28 flex flex-col items-center justify-between md:flex-row">
-                <div className="max-w-xl">
+            <div className="my-28 flex flex-col items-center justify-between gap-4 md:flex-row">
+                <div className="m-4 max-w-xl md:m-0">
                     <h1 className="font-mono text-4xl">
                         Always deliver your very best,{" "}
                         <span className="text-green">always check</span>
@@ -52,7 +52,7 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
                 />
             </div>
 
-            {Categories}
+            <div className="m-4 md:m-0">{Categories}</div>
         </div>
     );
 };

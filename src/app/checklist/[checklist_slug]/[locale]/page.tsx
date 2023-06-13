@@ -86,7 +86,7 @@ const ChecklistPage = ({
                 dangerouslySetInnerHTML={generateJSONLD(checklist)}
             />
             <div className="container mx-auto flex flex-col">
-                <div className="flex flex-col justify-between md:flex-row">
+                <div className="flex flex-col justify-between px-4 md:flex-row md:px-0">
                     <div className="order-1 mt-10 md:order-2">
                         <LocalesDropdown
                             availableLocales={availableLocales}

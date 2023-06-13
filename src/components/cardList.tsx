@@ -24,7 +24,9 @@ export const CardList = ({
     return (
         <div className="container">
             <Link href={listLink}>
-                <h2 className="my-8 text-3xl font-medium">{listName}</h2>
+                <h2 className="my-8 p-4 text-3xl font-medium md:p-0">
+                    {listName}
+                </h2>
             </Link>
 
             <div
