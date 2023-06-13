@@ -5,14 +5,12 @@ import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
-import { existsSync, readFileSync, readdirSync, statSync } from "fs";
+import { readFileSync, readdirSync, statSync } from "fs";
 import rehypeSlug from "rehype-slug";
 import find from "unist-util-find";
 import { visit } from "unist-util-visit";
 import { parse } from "yaml";
-import { generateSlug } from "@/app/utils";
-
-const NO_CATEGORY = "No Category";
+import { NO_CATEGORY, generateSlug } from "@/app/utils";
 
 export interface FrontMatter {
     author_username: string;
@@ -301,27 +299,6 @@ export class ChecklistService {
         }
 
         return this.checklists;
-    };
-
-    public getChecklistsGroupedByCategory = (locale: string) => {
-        const checklists = this.getChecklists();
-
-        // Groups categories in a object like { "Category Name": [ Checklist1, Checklist2 ]}
-        return checklists.reduce((grouped, checklist) => {
-            if (checklist.locale !== locale) {
-                return grouped;
-            }
-
-            const category = checklist.frontmatter.category ?? NO_CATEGORY;
-
-            if (!grouped[category]) {
-                grouped[category] = [];
-            }
-
-            grouped[category].push(checklist);
-
-            return grouped;
-        }, {} as Record<string, Checklist[]>);
     };
 
     public getAllChecklistLocales = () => {

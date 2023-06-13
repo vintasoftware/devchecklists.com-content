@@ -1,28 +1,14 @@
 import Image from "next/image";
 import { ChecklistService } from "../services/checklist";
 import ChecklistBoard from "@/images/checklist-board.png";
-import { CardList } from "../components/cardList";
-import { generateSlug } from "./utils";
 import { LocalesDropdown } from "@/components/localeDropdown";
+import { Categories } from "../components/categories";
 
 const HomePage = ({ locale = "en" }: { locale: string }) => {
     const checklistService = ChecklistService.getInstance();
 
-    const checklists =
-        ChecklistService.getInstance().getChecklistsGroupedByCategory(locale);
+    const checklists = ChecklistService.getInstance().getChecklists();
     const allAvailableLocales = checklistService.getAllChecklistLocales();
-
-    const Categories = Object.entries(checklists).map(
-        ([categoryName, checklists]) => (
-            <CardList
-                key={categoryName}
-                listName={categoryName}
-                listLink={`/category/${generateSlug(categoryName)}`}
-                checklists={checklists}
-                locale={locale}
-            />
-        )
-    );
 
     return (
         <div className="flex flex-col">
@@ -52,7 +38,9 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
                 />
             </div>
 
-            <div className="m-4 md:m-0">{Categories}</div>
+            <div className="m-4 md:m-0">
+                <Categories checklists={checklists} locale={locale} />
+            </div>
         </div>
     );
 };
