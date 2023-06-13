@@ -44,10 +44,7 @@ export const Card = ({
                     )}
                 </div>
                 {github_repository && (
-                    <Link
-                        href={`https://github.com/vintasoftware/${github_repository}`}
-                        target="_blank"
-                    >
+                    <Link href={github_repository} target="_blank">
                         <Image src={IconSocialGithub} alt="github logo" />
                     </Link>
                 )}
