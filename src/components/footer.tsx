@@ -1,5 +1,5 @@
 import Image from "next/image";
-import VintaLogo from "@/images/vinta-logo.png";
+import VintaLogo from "@/images/vinta-logo.svg";
 import NextLogo from "@/images/next.svg";
 import Link from "next/link";
 
@@ -14,7 +14,7 @@ export const Footer = () => {
                     <Link href="https://vintasoftware.com/" target="_blank">
                         <Image
                             src={VintaLogo}
-                            height={42}
+                            height={80}
                             alt="Vinta Software Logo"
                         />
                     </Link>
