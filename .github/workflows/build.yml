@@ -1,0 +1,43 @@
+name: Build and deploy
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            # Setup and installl Node and JS dependencies
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 20
+            - run: npm ci
+            # Build the project
+            - name: Build the app
+              run: npm run build
+            # Upload artifacts
+            - name: Upload GitHub Pages artifacts
+              uses: actions/upload-pages-artifact@v1.0.8
+              with:
+                  path: "out/"
+
+    deploy:
+        needs: build
+
+        # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+        permissions:
+            pages: write # to deploy to Pages
+            id-token: write # to verify the deployment originates from an appropriate source
+
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        # Specify runner + deployment step
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v2
