@@ -30,7 +30,7 @@ export const Card = ({
             <div className="flex h-32 items-center justify-between rounded-t-md bg-blue p-4 text-black">
                 <div className="flex h-full w-full flex-col justify-between">
                     <div className="flex items-center justify-between">
-                        <Link href={`checklist/${slug}/${locale}/`}>
+                        <Link href={`/checklist/${slug}/${locale}`}>
                             <h3 className="line-clamp-2 text-2xl">
                                 {title ?? slug}
                             </h3>

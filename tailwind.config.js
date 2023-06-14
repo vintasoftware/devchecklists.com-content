@@ -5,6 +5,7 @@ module.exports = {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
+    safelist: ["inline-block", "ml-1"],
     theme: {
         fontFamily: {
             sans: ["Roboto", "Arial", "sans-serif"],

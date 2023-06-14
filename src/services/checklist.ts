@@ -13,8 +13,15 @@ import { parse } from "yaml";
 import { generateSlug } from "@/app/utils";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSanitize from "rehype-sanitize";
+import rehypeExternalLinks from "rehype-external-links";
+import { fromHtml } from "hast-util-from-html";
 
 const NO_CATEGORY = "No Category";
+
+// HeroIcon arrow-top-right-on-square
+const EXTERNAL_LINK_SVG = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4" aria-hidden="true" role="img">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+</svg>`;
 
 export interface FrontMatter {
     author_username: string;
@@ -43,7 +50,7 @@ export interface Checklist {
 
 // Based on https://github.com/phuctm97/remark-parse-frontmatter
 // Adds frontmatter metadata to file.data.frontmatter so we can use it later
-export const remarkParseFrontmatter: Plugin = () => (tree, file) => {
+const remarkParseFrontmatter: Plugin = () => (tree, file) => {
     const node = find(tree, { type: "yaml" });
     if (!node) {
         file.message("No yaml frontmatter.");
@@ -115,9 +122,7 @@ const rehypeFormatCheckboxes: Plugin = () => (tree) =>
             }
 
             // remark-gfm follows the Github default of creating all checkbox inputs as disabled
-            if (checkbox.properties.disabled) {
-                checkbox.properties.disabled = false;
-            }
+            checkbox.properties.disabled = false;
 
             node.children = [
                 checkbox,
@@ -169,15 +174,35 @@ export class ChecklistService {
 
         // Use remark to convert markdown into HTML string
         const processedContent = unified()
+            // Parses Markdown to hast tree
             .use(remarkParse)
+            // remarkFrontmatter parses the front-matter, but does not make it available for after process
             .use(remarkFrontmatter)
+            // remarkParseFrontmatter adds the front-matter data to file.data.frontmatter
             .use(remarkParseFrontmatter)
+            // Github Markdown styles
             .use(remarkGfm)
+            // From MarkDown to HTML
             .use(remarkRehype)
-            .use(rehypeFormatCheckboxes)
+            // Adds ids to headers so we can easily link to them
             .use(rehypeSlug)
+            // Adds syntax highlight to <code> blocks
             .use(rehypeHighlight)
+            // Sanitizes HTML as our markdown is user input
             .use(rehypeSanitize)
+            // Opens external links on new tabs, adds external link icon for accessibility
+            .use(rehypeExternalLinks, {
+                target: "_blank",
+                rel: ["nofollow", "noopener", "noreferrer"],
+                content: fromHtml(EXTERNAL_LINK_SVG) as any,
+                contentProperties: {
+                    class: "inline-block ml-1",
+                    "aria-label": "Open in new tab",
+                },
+            })
+            // Enables checkboxes and add ids - should always run after rehypeSanitize
+            .use(rehypeFormatCheckboxes)
+            // Serializes hast tree to HTML
             .use(rehypeStringify)
             .processSync(fileContents);
 
