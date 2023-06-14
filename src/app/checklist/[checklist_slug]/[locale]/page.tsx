@@ -10,6 +10,7 @@ import { LocalesDropdown } from "@/components/localeDropdown";
 import Link from "next/link";
 import { Metadata } from "next";
 import Script from "next/script";
+import { Author } from "@/components/author";
 
 interface ChecklistParam {
     checklist_slug: string;
@@ -99,24 +100,11 @@ const ChecklistPage = ({
                                 <h2 className="font-mono text-4xl">{title}</h2>
                             )}
                         </div>
-                        <div className="checklist-author">
-                            <Link
-                                href={
-                                    author_username
-                                        ? `https://github.com/${author_username}/`
-                                        : "#"
-                                }
-                                target="_blank"
-                                className="flex items-center gap-2 text-blue"
-                            >
-                                {author_username && (
-                                    <Avatar
-                                        username={author_username}
-                                        size={35}
-                                    />
-                                )}
-                                {author_name && <h5>{author_name}</h5>}
-                            </Link>
+                        <div className="text-blue">
+                            <Author
+                                author_name={author_name}
+                                author_username={author_username}
+                            />
                         </div>
                         <h5 className="text-light-gray">{description}</h5>
                         <Tags tags={tags} />
