@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { ChecklistService } from "../services/checklist";
+import { Categories } from "@/components/categories";
+import { ChecklistService } from "@/services/checklist";
 import ChecklistBoard from "@/images/checklist-board.png";
 import { LocalesDropdown } from "@/components/localeDropdown";
-import { Categories } from "../components/categories";
 
 const HomePage = ({ locale = "en" }: { locale: string }) => {
     const checklistService = ChecklistService.getInstance();

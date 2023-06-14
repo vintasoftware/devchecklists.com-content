@@ -24,7 +24,7 @@ export const generateSlug = (text: string) =>
 export const groupChecklistsByCategory = (
     checklists: Checklist[],
     filter?: (checklist: Checklist) => boolean,
-    limit: number = 10
+    limit = 10
 ) => {
     return checklists.reduce((grouped, checklist) => {
         if (filter && !filter(checklist)) {
@@ -54,7 +54,7 @@ export const groupChecklistsByCategory = (
  */
 export function debounce<Args extends unknown[], Result = unknown>(
     f: (...args: Args) => Result,
-    interval: number = 500
+    interval = 500
 ): (...args: Args) => Promise<Result> {
     let timer: string | NodeJS.Timeout | null = null;
 

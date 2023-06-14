@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Checklist } from "../services/checklist";
-import { Avatar } from "./avatar";
-import GithubIcon from "@/images/github-logo.svg";
-import { Tags } from "./tag";
 import Link from "next/link";
+import { Tags } from "./tag";
+import { Author } from "./author";
+import { Checklist } from "@/services/checklist";
+import GithubIcon from "@/images/github-logo.svg";
 
 export const Card = ({
     checklist,
@@ -16,6 +16,7 @@ export const Card = ({
         slug,
         frontmatter: {
             title,
+            author_name,
             author_username,
             github_repository,
             description,
@@ -26,9 +27,9 @@ export const Card = ({
     return (
         <div className="m-4 flex w-64 shrink-0 flex-col rounded-md bg-dark-gray md:w-96">
             <div className="flex h-32 items-center justify-between rounded-t-md bg-blue p-4 text-black">
-                <div className="flex w-full flex-col justify-between">
+                <div className="flex h-full w-full flex-col justify-between">
                     <div className="flex items-center justify-between">
-                        <Link href={`checklist/${slug}/${locale}/`}>
+                        <Link href={`/checklist/${slug}/${locale}`}>
                             <h3 className="line-clamp-2 text-2xl">
                                 {title ?? slug}
                             </h3>
@@ -44,18 +45,13 @@ export const Card = ({
                             </Link>
                         )}
                     </div>
-                    {author_username && (
-                        <Link
-                            href={`https://github.com/${author_username}`}
-                            target="_blank"
-                            className="mt-4 flex items-center"
-                        >
-                            <Avatar username={author_username} />
-                            <h6 className="ml-2 text-xs font-bold">
-                                {author_username}
-                            </h6>
-                        </Link>
-                    )}
+                    <div className="mt-4 flex items-center text-xs font-bold">
+                        <Author
+                            author_name={author_name}
+                            author_username={author_username}
+                            avatarSize={25}
+                        />
+                    </div>
                 </div>
             </div>
             <div className="flex h-60 flex-col justify-between p-6">

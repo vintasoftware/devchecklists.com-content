@@ -1,15 +1,15 @@
 "use client";
 
-import { Checklist } from "../services/checklist";
-import { CardList } from "./cardList";
+import { useEffect, useState } from "react";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import {
     debounce,
     generateSlug,
     groupChecklistsByCategory,
     normalizeString,
 } from "../app/utils";
-import { useEffect, useState } from "react";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { CardList } from "./cardList";
+import { Checklist } from "@/services/checklist";
 
 const debouncedGroupChecklistsByCategory = debounce(groupChecklistsByCategory);
 

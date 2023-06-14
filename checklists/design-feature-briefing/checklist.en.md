@@ -1,5 +1,4 @@
 ---
-author_username: Aline Silveira
 author_name: Aline Silveira
 category: Design
 color: ""
