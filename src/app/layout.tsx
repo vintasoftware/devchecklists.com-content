@@ -1,10 +1,10 @@
-import Script from "next/script";
-import { Footer } from "../components/footer";
-import { Header } from "../components/header";
-import "./globals.css";
 import { Roboto_Flex, Roboto_Mono } from "next/font/google";
 import { Metadata } from "next";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { BodyGTM, HeadGTM } from "@/components/gtm";
+
+import "./globals.css";
 
 // Loads fonts: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 export const robotoFlex = Roboto_Flex({ subsets: ["latin"], display: "swap" });

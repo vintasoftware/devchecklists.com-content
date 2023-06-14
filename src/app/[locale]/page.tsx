@@ -1,5 +1,5 @@
-import { ChecklistService } from "@/services/checklist";
 import HomePage from "../page";
+import { ChecklistService } from "@/services/checklist";
 
 export function generateStaticParams() {
     const locales = ChecklistService.getInstance().getAllChecklistLocales();

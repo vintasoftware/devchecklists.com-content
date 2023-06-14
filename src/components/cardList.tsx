@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Checklist } from "../services/checklist";
 import { Card } from "./card";
+import { Checklist } from "@/services/checklist";
 
 export interface CardListProps {
     listName: string;

@@ -1,20 +1,20 @@
 import path from "path";
-import { unified, Plugin } from "unified";
+import { readFileSync, readdirSync, statSync } from "fs";
+import { Plugin, unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
-import { readFileSync, readdirSync, statSync } from "fs";
 import rehypeSlug from "rehype-slug";
 import find from "unist-util-find";
 import { visit } from "unist-util-visit";
 import { parse } from "yaml";
-import { generateSlug } from "@/app/utils";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeExternalLinks from "rehype-external-links";
 import { fromHtml } from "hast-util-from-html";
+import { generateSlug } from "@/app/utils";
 
 const NO_CATEGORY = "No Category";
 
@@ -159,10 +159,7 @@ export class ChecklistService {
         return ChecklistService.instance;
     }
 
-    public getChecklistData = (
-        slug: string,
-        locale: string = "en"
-    ): Checklist => {
+    public getChecklistData = (slug: string, locale = "en"): Checklist => {
         const allLocales = this.files.filter((file) => file.slug === slug);
         const availableLocales = allLocales.map(({ locale }) => locale);
 
@@ -222,7 +219,7 @@ export class ChecklistService {
     };
 
     private getLocaleFromChecklistFilename = (filename: string) => {
-        const CHECKLIST_FILE_NAME_PATTERN = /^checklist\.([a-z\-\_]+)\.md$/;
+        const CHECKLIST_FILE_NAME_PATTERN = /^checklist\.([a-z\-_]+)\.md$/;
 
         const match = filename.match(CHECKLIST_FILE_NAME_PATTERN);
 
