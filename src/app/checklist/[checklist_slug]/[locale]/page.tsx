@@ -10,6 +10,8 @@ import { Checklist } from "@/components/checklist";
 import { LocalesDropdown } from "@/components/localeDropdown";
 import { Author } from "@/components/author";
 
+import "./page.css";
+
 interface ChecklistParam {
     checklist_slug: string;
     locale: string;
@@ -113,7 +115,7 @@ const ChecklistPage = ({
                     </div>
                 </div>
 
-                <article className="prose prose-invert max-w-3xl rounded-md bg-dark-gray px-10 py-4 prose-ul:list-none">
+                <article className="prose prose-invert max-w-3xl rounded-md bg-dark-gray px-10 py-8 prose-ul:list-none">
                     <Checklist checklistHTML={checklist.contentHtml} />
                 </article>
             </div>

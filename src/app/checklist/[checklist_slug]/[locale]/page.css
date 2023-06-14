@@ -1,0 +1,8 @@
+/* Remove the top margin from the first h2 element if it's not following a h1 element */
+article h2:first-of-type {
+    margin-top: 0;
+}
+
+article h1 ~ h2:first-of-type {
+    margin-top: 2em;
+}
