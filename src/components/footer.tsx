@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import VintaLogo from "@/images/vinta-logo.svg";
 import NextLogo from "@/images/next.svg";
-import Link from "next/link";
 
 export const Footer = () => {
     return (

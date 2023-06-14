@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { Checklist } from "../services/checklist";
-import { Avatar } from "./avatar";
-import GithubIcon from "@/images/github-logo.svg";
-import { Tags } from "./tag";
 import Link from "next/link";
+import { Tags } from "./tag";
 import { Author } from "./author";
+import { Checklist } from "@/services/checklist";
+import GithubIcon from "@/images/github-logo.svg";
 
 export const Card = ({
     checklist,

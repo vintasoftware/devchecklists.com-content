@@ -1,15 +1,13 @@
-import { Avatar } from "@/components/avatar";
-import {
-    Checklist as IChecklist,
-    ChecklistService,
-} from "@/services/checklist";
-import { Tags } from "@/components/tag";
 import { CircleStackIcon } from "@heroicons/react/24/solid";
-import { Checklist } from "@/components/checklist";
-import { LocalesDropdown } from "@/components/localeDropdown";
-import Link from "next/link";
 import { Metadata } from "next";
 import Script from "next/script";
+import {
+    ChecklistService,
+    Checklist as IChecklist,
+} from "@/services/checklist";
+import { Tags } from "@/components/tag";
+import { Checklist } from "@/components/checklist";
+import { LocalesDropdown } from "@/components/localeDropdown";
 import { Author } from "@/components/author";
 
 interface ChecklistParam {
