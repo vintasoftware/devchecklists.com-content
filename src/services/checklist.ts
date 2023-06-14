@@ -5,12 +5,14 @@ import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
-import { existsSync, readFileSync, readdirSync, statSync } from "fs";
+import { readFileSync, readdirSync, statSync } from "fs";
 import rehypeSlug from "rehype-slug";
 import find from "unist-util-find";
 import { visit } from "unist-util-visit";
 import { parse } from "yaml";
 import { generateSlug } from "@/app/utils";
+import rehypeHighlight from "rehype-highlight";
+import rehypeSanitize from "rehype-sanitize";
 
 const NO_CATEGORY = "No Category";
 
@@ -174,6 +176,8 @@ export class ChecklistService {
             .use(remarkRehype)
             .use(rehypeFormatCheckboxes)
             .use(rehypeSlug)
+            .use(rehypeHighlight)
+            .use(rehypeSanitize)
             .use(rehypeStringify)
             .processSync(fileContents);
 
