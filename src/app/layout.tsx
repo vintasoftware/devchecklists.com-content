@@ -33,6 +33,7 @@ export const metadata: Metadata = {
         "checklist, lean, agile, web development, python, django, javascript, react, python development, django development, javascript development, react development, development, software development, ux design, product discovery, code review, test coverage, mvp, api, api experts, django rest framework, SPA, single page application",
     themeColor: "#52D171",
     colorScheme: "dark",
+    metadataBase: new URL("https://devchecklists.com"),
     twitter: {
         card: "summary_large_image",
         site: "@vintasoftware",
