@@ -115,9 +115,7 @@ const rehypeFormatCheckboxes: Plugin = () => (tree) =>
             }
 
             // remark-gfm follows the Github default of creating all checkbox inputs as disabled
-            if (checkbox.properties.disabled) {
-                checkbox.properties.disabled = false;
-            }
+            checkbox.properties.disabled = false;
 
             node.children = [
                 checkbox,
@@ -174,10 +172,10 @@ export class ChecklistService {
             .use(remarkParseFrontmatter)
             .use(remarkGfm)
             .use(remarkRehype)
-            .use(rehypeFormatCheckboxes)
             .use(rehypeSlug)
             .use(rehypeHighlight)
             .use(rehypeSanitize)
+            .use(rehypeFormatCheckboxes)
             .use(rehypeStringify)
             .processSync(fileContents);
 
