@@ -2,21 +2,23 @@
 
 import { useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { CardList } from "./cardList";
 import {
     debounce,
     generateSlug,
     groupChecklistsByCategory,
     normalizeString,
-} from "../app/utils";
-import { CardList } from "./cardList";
+} from "@/app/utils";
 import { Checklist } from "@/services/checklist";
 
 const debouncedGroupChecklistsByCategory = debounce(groupChecklistsByCategory);
 
 export const Categories = ({
+    initialChecklistsGroupedByCategory,
     checklists,
     locale,
 }: {
+    initialChecklistsGroupedByCategory: Record<string, Checklist[]>;
     checklists: Checklist[];
     locale: string;
 }) => {
@@ -24,12 +26,7 @@ export const Categories = ({
     const normalizedSearchInput = normalizeString(searchInputValue);
 
     const [checklistsGroupedByCategory, setChecklistsGroupedByCategory] =
-        useState(
-            groupChecklistsByCategory(
-                checklists,
-                (checklist) => checklist.locale === locale
-            )
-        );
+        useState(initialChecklistsGroupedByCategory);
 
     useEffect(() => {
         const checklistFilter = ({
@@ -57,16 +54,27 @@ export const Categories = ({
         };
 
         async function updateChecklists() {
-            setChecklistsGroupedByCategory(
-                await debouncedGroupChecklistsByCategory(
-                    checklists,
-                    checklistFilter
-                )
-            );
+            if (normalizedSearchInput) {
+                setChecklistsGroupedByCategory(
+                    await debouncedGroupChecklistsByCategory(
+                        checklists,
+                        checklistFilter
+                    )
+                );
+            } else {
+                setChecklistsGroupedByCategory(
+                    initialChecklistsGroupedByCategory
+                );
+            }
         }
 
         updateChecklists();
-    }, [locale, checklists, normalizedSearchInput]);
+    }, [
+        locale,
+        checklists,
+        normalizedSearchInput,
+        initialChecklistsGroupedByCategory,
+    ]);
 
     const Lists = Object.entries(checklistsGroupedByCategory).map(
         ([categoryName, checklists]) => (

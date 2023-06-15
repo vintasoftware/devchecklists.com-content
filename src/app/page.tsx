@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { groupChecklistsByCategory } from "./utils";
 import { Categories } from "@/components/categories";
 import { ChecklistService } from "@/services/checklist";
 import ChecklistBoard from "@/images/checklist-board.png";
@@ -9,6 +10,12 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
 
     const checklists = ChecklistService.getInstance().getChecklists();
     const allAvailableLocales = checklistService.getAllChecklistLocales();
+
+    // Run the initial grouping so we can take benefit of SSR
+    const initialChecklistsGroupedByCategory = groupChecklistsByCategory(
+        checklists,
+        (checklist) => checklist.locale === locale
+    );
 
     return (
         <div className="flex flex-col">
@@ -39,7 +46,13 @@ const HomePage = ({ locale = "en" }: { locale: string }) => {
             </div>
 
             <div className="m-4 md:m-0">
-                <Categories checklists={checklists} locale={locale} />
+                <Categories
+                    checklists={checklists}
+                    locale={locale}
+                    initialChecklistsGroupedByCategory={
+                        initialChecklistsGroupedByCategory
+                    }
+                />
             </div>
         </div>
     );

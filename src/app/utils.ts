@@ -26,6 +26,7 @@ export const groupChecklistsByCategory = (
     filter?: (checklist: Checklist) => boolean,
     limit = 10
 ) => {
+    console.log("group");
     return checklists.reduce((grouped, checklist) => {
         if (filter && !filter(checklist)) {
             return grouped;
