@@ -16,7 +16,8 @@
                 "naumovs.color-highlight",
                 "visualstudioexptteam.vscodeintellicode",
                 "bierner.markdown-preview-github-styles",
-                "yzhang.markdown-all-in-one"
+                "yzhang.markdown-all-in-one",
+                "ms-playwright.playwright"
             ]
         }
     },
