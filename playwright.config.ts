@@ -11,7 +11,9 @@ export default defineConfig({
         command: "npm run build && npm start",
         url: "http://127.0.0.1:3000",
         reuseExistingServer: !process.env.CI,
-        stdout: "ignore",
+        // 3min timeout as build may take longer on CI
+        timeout: 180 * 1000,
+        stdout: "pipe",
         stderr: "pipe",
     },
     // Fail the build on CI if you accidentally left test.only in the source code.

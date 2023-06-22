@@ -76,7 +76,7 @@ test("Authors without author_username should not be links", async ({
     ).toBe(0);
 });
 
-test("Click on Vinta's logo and go to Vinta homepage", async ({
+test("Click on Vinta's logo and go to Vinta's homepage", async ({
     page,
     context,
 }) => {
