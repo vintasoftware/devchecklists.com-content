@@ -5,7 +5,7 @@ import { CardList } from "@/components/cardList";
 import ChecklistBoard from "@/images/checklist-board.png";
 import { LocalesDropdown } from "@/components/localeDropdown";
 
-const HomePage = ({ locale = "en" }: { locale: string }) => {
+const HomePage = ({ locale = "en" }: { locale?: string }) => {
     const checklistService = ChecklistService.getInstance();
 
     const checklists =

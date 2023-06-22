@@ -8,6 +8,7 @@
         "ms-vscode-remote.remote-containers",
         "naumovs.color-highlight",
         "visualstudioexptteam.vscodeintellicode",
-        "yzhang.markdown-all-in-one"
+        "yzhang.markdown-all-in-one",
+        "ms-playwright.playwright"
     ]
 }
