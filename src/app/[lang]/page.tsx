@@ -23,7 +23,7 @@ const HomePage = ({ params: { lang } }: { params: { lang: string } }) => {
             <CardList
                 key={categoryName}
                 listName={categoryName}
-                listLink={`/category/${generateSlug(categoryName)}`}
+                listLink={`/${lang}/category/${generateSlug(categoryName)}`}
                 checklists={checklists}
                 lang={lang}
             />
