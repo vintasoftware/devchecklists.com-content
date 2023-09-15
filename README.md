@@ -16,6 +16,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Search index
+
+The search bar will not show up on the development server as it depends on the build files
+Build the static production website with `npm run build`
+Serve the static website with `npm run start`
+
 ### Learn More
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

@@ -7,10 +7,10 @@ import GithubIcon from "@/images/github-logo.svg";
 
 export const Card = ({
     checklist,
-    locale = "en",
+    lang = "en",
 }: {
     checklist: Checklist;
-    locale?: string;
+    lang?: string;
 }) => {
     const {
         slug,
@@ -29,7 +29,7 @@ export const Card = ({
             <div className="flex h-32 items-center justify-between rounded-t-md bg-blue p-4 text-black">
                 <div className="flex h-full w-full flex-col justify-between">
                     <div className="flex items-center justify-between">
-                        <Link href={`/checklist/${slug}/${locale}`}>
+                        <Link href={`/${lang}/checklist/${slug}`}>
                             <h3 className="line-clamp-2 text-2xl">
                                 {title ?? slug}
                             </h3>
@@ -56,7 +56,7 @@ export const Card = ({
             </div>
             <div className="flex h-60 flex-col justify-between p-6">
                 <h5 className="line-clamp-5 text-light-gray">{description}</h5>
-                <Tags tags={tags} />
+                <Tags tags={tags} lang={lang} />
             </div>
         </div>
     );

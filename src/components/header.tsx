@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/images/logo.svg";
 
-export const Header = () => {
+export const Header = ({ lang }: { lang: string }) => {
     return (
         <header className="border-bottom flex justify-center border-black bg-dark-gray p-4">
             <nav className="container flex h-16 items-center justify-between">
-                <Link href="/">
+                <Link href={`/${lang}`}>
                     <Image src={Logo} alt="Devchecklists logo" width={180} />
                 </Link>
                 <Link
