@@ -6,6 +6,8 @@
         "prettier"
     ],
     "rules": {
-        "import/order": "warn"
+        "import/order": "warn",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/ban-ts-comment": "warn"
     }
 }
