@@ -19,7 +19,9 @@ export const LangsDropdown = ({
             <ul className="relative z-10 bg-light-black p-2 shadow">
                 {availableLangs.map((lang) => (
                     <li key={lang}>
-                        <Link href={`/${lang}${href}`}>{lang}</Link>
+                        <Link href={`/${lang}${href}`} prefetch={false}>
+                            {lang}
+                        </Link>
                     </li>
                 ))}
             </ul>
