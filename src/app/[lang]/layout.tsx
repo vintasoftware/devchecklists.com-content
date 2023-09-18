@@ -3,20 +3,39 @@ import { Metadata } from "next";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { BodyGTM, HeadGTM } from "@/components/gtm";
+import { ChecklistService } from "@/services/checklist";
 
-import "./globals.css";
+import "../globals.css";
+import { Search } from "@/components/search";
+import { Suspense } from "react";
 
 // Loads fonts: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 export const robotoFlex = Roboto_Flex({ subsets: ["latin"], display: "swap" });
 export const robotoMono = Roboto_Mono({ subsets: ["latin"], display: "swap" });
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export const generateStaticParams = () => {
+    return ChecklistService.getInstance()
+        .getAllChecklistLangs()
+        .map((lang) => ({ lang }));
+};
+
+export default function Layout({
+    children,
+    params: { lang },
+}: {
+    children: React.ReactNode;
+    params: { lang: string };
+}) {
     return (
-        <html lang="en">
+        <html lang={lang}>
             <HeadGTM />
+
             <body className="bg-light-black">
                 <BodyGTM />
-                <Header />
+                <Header lang={lang} />
+                <Suspense fallback={null}>
+                    <Search />
+                </Suspense>
                 <div className="mx-auto min-h-screen max-w-5xl">{children}</div>
                 <Footer />
             </body>

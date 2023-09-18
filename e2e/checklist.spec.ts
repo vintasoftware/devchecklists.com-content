@@ -5,52 +5,52 @@ test("Check a checkbox and ensure it's still checked after refreshing", async ({
     page,
 }) => {
     // Go to Home
-    await page.goto("/");
+    await page.goto("/en");
 
     // Click on a checklist
     await page.getByRole("link", { name: "Web Quality Checklist" }).click();
-    await expect(page).toHaveURL("/checklist/web-quality-checklist/en");
+    await expect(page).toHaveURL("/en/checklist/web-quality-checklist");
 
     // Click on a checkmark
     await page
         .getByLabel(
-            "3. Each information-carrying image has an appropriate text alternative."
+            "3. Each information-carrying image has an appropriate text alternative.",
         )
         .check();
 
     // Click on a checkmark label
     await page
         .getByText(
-            "10. Captchas are accompanied by an alternative access solution."
+            "10. Captchas are accompanied by an alternative access solution.",
         )
         .check();
 
     // Click on a checkmark
     await page
         .getByLabel(
-            "16. Navigation blocks are located in the same place in every page’s source code."
+            "16. Navigation blocks are located in the same place in every page’s source code.",
         )
         .check();
 
     // Open new page
     const newPage = await context.newPage();
-    await newPage.goto("/checklist/web-quality-checklist/en");
+    await newPage.goto("/en/checklist/web-quality-checklist");
 
     // Check if checkmarks are checkmarked on new page
     await expect(
         newPage.getByLabel(
-            "3. Each information-carrying image has an appropriate text alternative."
-        )
+            "3. Each information-carrying image has an appropriate text alternative.",
+        ),
     ).toBeChecked();
     await expect(
         newPage.getByText(
-            "10. Captchas are accompanied by an alternative access solution."
-        )
+            "10. Captchas are accompanied by an alternative access solution.",
+        ),
     ).toBeChecked();
     await expect(
         newPage.getByLabel(
-            "16. Navigation blocks are located in the same place in every page’s source code."
-        )
+            "16. Navigation blocks are located in the same place in every page’s source code.",
+        ),
     ).toBeChecked();
 
     // Go to another language
@@ -60,21 +60,21 @@ test("Check a checkbox and ensure it's still checked after refreshing", async ({
     // Click on a checkmark
     await page
         .getByLabel(
-            "20. Le contenu et le sens de chaque page ne sont pas altérés lorsque les styles sont désactivés."
+            "20. Le contenu et le sens de chaque page ne sont pas altérés lorsque les styles sont désactivés.",
         )
         .check();
     await page
         .getByText(
-            "25. Le code source de chaque page ne contient pas d'éléments ou d'attributs de p"
+            "25. Le code source de chaque page ne contient pas d'éléments ou d'attributs de p",
         )
         .click();
 
     // Check if checkmark is checkmarked on new page
-    await newPage.goto("/checklist/web-quality-checklist/fr");
+    await newPage.goto("/fr/checklist/web-quality-checklist");
     await expect(
         newPage.getByText(
-            "25. Le code source de chaque page ne contient pas d'éléments ou d'attributs de p"
-        )
+            "25. Le code source de chaque page ne contient pas d'éléments ou d'attributs de p",
+        ),
     ).toBeChecked();
 
     // Go back to english
@@ -84,17 +84,17 @@ test("Check a checkbox and ensure it's still checked after refreshing", async ({
     // Check if checkmarks are still checkmarked
     await expect(
         page.getByLabel(
-            "3. Each information-carrying image has an appropriate text alternative."
-        )
+            "3. Each information-carrying image has an appropriate text alternative.",
+        ),
     ).toBeChecked();
     await expect(
         page.getByText(
-            "10. Captchas are accompanied by an alternative access solution."
-        )
+            "10. Captchas are accompanied by an alternative access solution.",
+        ),
     ).toBeChecked();
     await expect(
         page.getByLabel(
-            "16. Navigation blocks are located in the same place in every page’s source code."
-        )
+            "16. Navigation blocks are located in the same place in every page’s source code.",
+        ),
     ).toBeChecked();
 });

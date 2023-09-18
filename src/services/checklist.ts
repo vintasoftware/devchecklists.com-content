@@ -37,13 +37,13 @@ export interface FrontMatter {
 interface ChecklistFile {
     slug: string;
     path: string;
-    locale: string;
+    lang: string;
 }
 
 export interface Checklist {
     slug: string;
-    locale: string;
-    availableLocales: string[];
+    lang: string;
+    availableLangs: string[];
     contentHtml: string;
     frontmatter: Partial<FrontMatter>;
 }
@@ -106,10 +106,10 @@ const rehypeFormatCheckboxes: Plugin = () => (tree) =>
             }
 
             const elementsToBeWrappedInLabel = children.filter(
-                (child: any) => child.tagName !== "ul"
+                (child: any) => child.tagName !== "ul",
             );
             const subList = children.filter(
-                (child: any) => child.tagName == "ul"
+                (child: any) => child.tagName == "ul",
             );
 
             // If the checkbox doesn't have an id, generate one
@@ -117,7 +117,7 @@ const rehypeFormatCheckboxes: Plugin = () => (tree) =>
                 checkbox.properties.id = generateSlug(
                     elementsToBeWrappedInLabel
                         .map((text: any) => text.value)
-                        .join()
+                        .join(),
                 );
             }
 
@@ -134,7 +134,7 @@ const rehypeFormatCheckboxes: Plugin = () => (tree) =>
                 },
                 ...subList,
             ];
-        }
+        },
     );
 
 export class ChecklistService {
@@ -159,13 +159,13 @@ export class ChecklistService {
         return ChecklistService.instance;
     }
 
-    public getChecklistData = (slug: string, locale = "en"): Checklist => {
-        const allLocales = this.files.filter((file) => file.slug === slug);
-        const availableLocales = allLocales.map(({ locale }) => locale);
+    public getChecklistData = (slug: string, lang = "en"): Checklist => {
+        const allLangs = this.files.filter((file) => file.slug === slug);
+        const availableLangs = allLangs.map(({ lang }) => lang);
 
-        const file = allLocales.find((file) => file.locale === locale);
+        const file = allLangs.find((file) => file.lang === lang);
 
-        if (!file) throw new Error(`Missing checklist: ${slug} -${locale}`);
+        if (!file) throw new Error(`Missing checklist: ${slug} -${lang}`);
 
         const fileContents = readFileSync(file.path, "utf8");
 
@@ -208,9 +208,9 @@ export class ChecklistService {
         // Combine the data with the id and contentHtml
         return {
             slug,
-            locale,
+            lang,
             contentHtml,
-            availableLocales,
+            availableLangs,
             frontmatter: processedContent.data.frontmatter as Record<
                 string,
                 string
@@ -233,19 +233,19 @@ export class ChecklistService {
     private _getChecklistFiles = (): ChecklistFile[] => {
         const files = [];
 
-        // Files should be on <checklist-slug>/checklist.<locale>.md
+        // Files should be on <checklist-slug>/checklist.<lang>.md
         const root = readdirSync(this.checklistsDirectory);
         for (const checklistFolder of root) {
             const folderPath = path.join(
                 this.checklistsDirectory,
-                checklistFolder
+                checklistFolder,
             );
             const folderStat = statSync(folderPath);
 
             if (!folderStat.isDirectory()) {
                 console.warn(
                     "Found file at the root of checklists - all checklists should be on folders",
-                    { file: folderPath }
+                    { file: folderPath },
                 );
                 continue;
             }
@@ -259,7 +259,7 @@ export class ChecklistService {
                 if (checklistFileStat.isDirectory()) {
                     console.debug(
                         "Found folder inside a checklist folder - ignoring",
-                        { folder: checklistFilePath }
+                        { folder: checklistFilePath },
                     );
                     continue;
                 }
@@ -267,24 +267,23 @@ export class ChecklistService {
                 // If we find a <checklist-name>/checklist.md, assume it's en
                 if (checklistFile === "checklist.md") {
                     console.warn(
-                        "Found checklist without locale suffix - will use en as default",
-                        { file: checklistFilePath }
+                        "Found checklist without lang suffix - will use en as default",
+                        { file: checklistFilePath },
                     );
                     files.push({
                         slug: checklistFolder,
                         path: checklistFilePath,
-                        locale: "en",
+                        lang: "en",
                     });
                     continue;
                 }
 
-                const locale =
-                    this.getLocaleFromChecklistFilename(checklistFile);
+                const lang = this.getLocaleFromChecklistFilename(checklistFile);
 
-                if (!locale) {
+                if (!lang) {
                     console.debug(
-                        "Found filename that does not match the expected checklist.<locale>.md - ignoring",
-                        { file: checklistFilePath }
+                        "Found filename that does not match the expected checklist.<lang>.md - ignoring",
+                        { file: checklistFilePath },
                     );
                     continue;
                 }
@@ -292,7 +291,7 @@ export class ChecklistService {
                 files.push({
                     slug: checklistFolder,
                     path: checklistFilePath,
-                    locale,
+                    lang,
                 });
             }
         }
@@ -314,7 +313,7 @@ export class ChecklistService {
         const files = this.getChecklistFiles(refresh);
 
         for (const file of files) {
-            checklists.push(this.getChecklistData(file.slug, file.locale));
+            checklists.push(this.getChecklistData(file.slug, file.lang));
         }
 
         return checklists;
@@ -329,45 +328,48 @@ export class ChecklistService {
         return this.checklists;
     };
 
-    public getChecklistsGroupedByCategory = (locale: string) => {
+    public getChecklistsGroupedByCategory = (lang: string) => {
         const checklists = this.getChecklists();
 
         // Groups categories in a object like { "Category Name": [ Checklist1, Checklist2 ]}
-        return checklists.reduce((grouped, checklist) => {
-            if (checklist.locale !== locale) {
+        return checklists.reduce(
+            (grouped, checklist) => {
+                if (checklist.lang !== lang) {
+                    return grouped;
+                }
+
+                const category = checklist.frontmatter.category ?? NO_CATEGORY;
+
+                if (!grouped[category]) {
+                    grouped[category] = [];
+                }
+
+                grouped[category].push(checklist);
+
                 return grouped;
-            }
-
-            const category = checklist.frontmatter.category ?? NO_CATEGORY;
-
-            if (!grouped[category]) {
-                grouped[category] = [];
-            }
-
-            grouped[category].push(checklist);
-
-            return grouped;
-        }, {} as Record<string, Checklist[]>);
+            },
+            {} as Record<string, Checklist[]>,
+        );
     };
 
-    public getAllChecklistLocales = () => {
+    public getAllChecklistLangs = () => {
         const checklists = this.getChecklists();
 
-        const locales = checklists.map(({ locale }) => locale);
-        const deduplicatedLocales = new Set(locales);
+        const langs = checklists.map(({ lang }) => lang);
+        const deduplicatedLangs = new Set(langs);
 
-        return Array.from(deduplicatedLocales);
+        return Array.from(deduplicatedLangs);
     };
 
     public getAllChecklistCategories = () => {
         const checklists = this.getChecklists();
 
         const categories = checklists.map(
-            ({ frontmatter: { category } }) => category ?? NO_CATEGORY
+            ({ frontmatter: { category } }) => category ?? NO_CATEGORY,
         );
         const deduplicatedCategories = Array.from(new Set(categories));
         const categorySlugs = deduplicatedCategories.map((category) =>
-            generateSlug(category)
+            generateSlug(category),
         );
 
         return categorySlugs;
@@ -378,13 +380,13 @@ export class ChecklistService {
 
         if (category === NO_CATEGORY)
             return checklists.filter(
-                ({ frontmatter: { category } }) => !category
+                ({ frontmatter: { category } }) => !category,
             );
 
         return this.getChecklists().filter(
             ({ frontmatter }) =>
                 frontmatter.category &&
-                generateSlug(frontmatter.category) === generateSlug(category)
+                generateSlug(frontmatter.category) === generateSlug(category),
         );
     };
 
@@ -392,7 +394,7 @@ export class ChecklistService {
         const checklists = this.getChecklists();
 
         const tags = checklists.flatMap(
-            ({ frontmatter: { tags } }) => tags ?? []
+            ({ frontmatter: { tags } }) => tags ?? [],
         );
         const deduplicatedTags = Array.from(new Set(tags));
         const tagSlugs = deduplicatedTags.map((tag) => generateSlug(tag));
@@ -401,7 +403,7 @@ export class ChecklistService {
     };
 
     public getChecklistsByTag = (tag: string) =>
-        this.getChecklists().filter(({ frontmatter: { tags } }) =>
-            tags?.includes(tag)
+        this.getChecklists().filter(
+            ({ frontmatter: { tags } }) => tags?.includes(tag),
         );
 }

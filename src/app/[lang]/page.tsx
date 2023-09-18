@@ -1,33 +1,39 @@
 import Image from "next/image";
-import { generateSlug } from "./utils";
+import { generateSlug } from "../utils";
 import { ChecklistService } from "@/services/checklist";
 import { CardList } from "@/components/cardList";
 import ChecklistBoard from "@/images/checklist-board.png";
-import { LocalesDropdown } from "@/components/localeDropdown";
+import { LangsDropdown } from "@/components/langDropdown";
 
-const HomePage = ({ locale = "en" }: { locale?: string }) => {
+export const generateStaticParams = () => {
+    return ChecklistService.getInstance()
+        .getAllChecklistLangs()
+        .map((lang) => ({ lang }));
+};
+
+const HomePage = ({ params: { lang } }: { params: { lang: string } }) => {
     const checklistService = ChecklistService.getInstance();
 
     const checklists =
-        ChecklistService.getInstance().getChecklistsGroupedByCategory(locale);
-    const allAvailableLocales = checklistService.getAllChecklistLocales();
+        ChecklistService.getInstance().getChecklistsGroupedByCategory(lang);
+    const allAvailableLangs = checklistService.getAllChecklistLangs();
 
     const Categories = Object.entries(checklists).map(
         ([categoryName, checklists]) => (
             <CardList
                 key={categoryName}
                 listName={categoryName}
-                listLink={`/category/${generateSlug(categoryName)}`}
+                listLink={`/${lang}/category/${generateSlug(categoryName)}`}
                 checklists={checklists}
-                locale={locale}
+                lang={lang}
             />
-        )
+        ),
     );
 
     return (
         <div className="flex flex-col">
             <div className="ml-auto">
-                <LocalesDropdown availableLocales={allAvailableLocales} />
+                <LangsDropdown availableLangs={allAvailableLangs} />
             </div>
             <div className="my-28 flex flex-col items-center justify-between gap-4 md:flex-row">
                 <div className="m-4 max-w-xl md:m-0">

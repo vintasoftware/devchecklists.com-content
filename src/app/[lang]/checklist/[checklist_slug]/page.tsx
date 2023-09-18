@@ -7,35 +7,35 @@ import {
 } from "@/services/checklist";
 import { Tags } from "@/components/tag";
 import { Checklist } from "@/components/checklist";
-import { LocalesDropdown } from "@/components/localeDropdown";
+import { LangsDropdown } from "@/components/langDropdown";
 import { Author } from "@/components/author";
 
 import "./page.css";
 
 interface ChecklistParam {
     checklist_slug: string;
-    locale: string;
+    lang: string;
 }
 
-// Generate all static paths that lead to checklists on the format /<checklist_slug>/<locale>
+// Generate all static paths that lead to checklists
 export const generateStaticParams = (): ChecklistParam[] => {
     const checklistPaths = ChecklistService.getInstance().getChecklistFiles();
 
-    return checklistPaths.map(({ slug, locale }) => ({
+    return checklistPaths.map(({ slug, lang }) => ({
         checklist_slug: slug,
-        locale,
+        lang,
     }));
 };
 
 // Generate the page metadata
 export async function generateMetadata({
-    params: { checklist_slug: slug, locale },
+    params: { checklist_slug: slug, lang },
 }: {
     params: ChecklistParam;
 }): Promise<Metadata> {
     const checklist = ChecklistService.getInstance().getChecklistData(
         slug,
-        locale
+        lang,
     );
 
     return {
@@ -60,13 +60,13 @@ function generateJSONLD(checklist: IChecklist) {
 }
 
 const ChecklistPage = ({
-    params: { checklist_slug: slug, locale },
+    params: { checklist_slug: slug, lang },
 }: {
     params: ChecklistParam;
 }) => {
     const checklist = ChecklistService.getInstance().getChecklistData(
         slug,
-        locale
+        lang,
     );
     const {
         frontmatter: {
@@ -76,7 +76,7 @@ const ChecklistPage = ({
             author_name,
             tags = [],
         },
-        availableLocales,
+        availableLangs,
     } = checklist;
 
     return (
@@ -89,12 +89,15 @@ const ChecklistPage = ({
             <div className="container mx-auto flex flex-col">
                 <div className="flex flex-col justify-between px-4 md:flex-row md:px-0">
                     <div className="order-1 mt-10 md:order-2">
-                        <LocalesDropdown
-                            availableLocales={availableLocales}
-                            hrefPrefix={`/checklist/${slug}/`}
+                        <LangsDropdown
+                            availableLangs={availableLangs}
+                            href={`/checklist/${slug}/`}
                         />
                     </div>
-                    <div className="order-2 my-10 flex flex-col gap-4 md:order-1">
+                    <div
+                        className="order-2 my-10 flex flex-col gap-4 md:order-1"
+                        data-pagefind-body
+                    >
                         <div className="flex justify-between">
                             {title && (
                                 <h2 className="font-mono text-4xl">{title}</h2>
@@ -107,7 +110,7 @@ const ChecklistPage = ({
                             />
                         </div>
                         <h5 className="text-light-gray">{description}</h5>
-                        <Tags tags={tags} />
+                        <Tags tags={tags} lang={lang} />
                         <div className="flex items-center gap-2 text-blue">
                             <CircleStackIcon title="Storage" className="h-4" />
                             <h5>Checks are saved to your local storage</h5>
