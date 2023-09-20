@@ -38,6 +38,7 @@ interface ChecklistFile {
     slug: string;
     path: string;
     lang: string;
+    lastModified: Date;
 }
 
 export interface Checklist {
@@ -273,6 +274,7 @@ export class ChecklistService {
                     files.push({
                         slug: checklistFolder,
                         path: checklistFilePath,
+                        lastModified: checklistFileStat.mtime,
                         lang: "en",
                     });
                     continue;
@@ -291,6 +293,7 @@ export class ChecklistService {
                 files.push({
                     slug: checklistFolder,
                     path: checklistFilePath,
+                    lastModified: checklistFileStat.mtime,
                     lang,
                 });
             }
