@@ -70,6 +70,7 @@ title: Django Production Launch
 - [ ] Consider `ATOMIC_REQUESTS` to assert DB integrity: http://bit.ly/dj-database-transactions
 - [ ] Set `upload_to` argument for all `FileField` and `ImageField`
 - [ ] Use environment variables, not hardcoded settings
+- [ ] Set a periodic job to cleanup expired sessions and auth tokens (depending on your app's auth methods)
 
 ## Transactional Emails
 
