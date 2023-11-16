@@ -77,6 +77,7 @@ title: Django Production Launch
 - [ ] Check if `DEFAULT_FROM_EMAIL` is set to a friendly reply email
 - [ ] Check if email templates are correct
 - [ ] Configure SendGrid, Mailgun, or another transactional email service
+- [ ] Set up [Domain Authentication](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication) to avoid bad email delivery
 - [ ] Set an automatic BCC on SendGrid
 - [ ] Save metadata of every email sent, use http://bit.ly/anymail-signals
 
@@ -85,7 +86,6 @@ title: Django Production Launch
 - [ ] Check no sensitive data is being logged
 - [ ] Check if logs are prefixed according to task/feature
 - [ ] Configure Papertrail or another logging service
-
 - [ ] Set Papertrail alerts and integrate with Slack and email
 - [ ] Configure Sentry for backend, including Celery
 - [ ] Configure Sentry for frontend
