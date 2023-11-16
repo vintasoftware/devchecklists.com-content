@@ -102,6 +102,7 @@ title: Django Production Launch
 - [ ] Change passwords of all third-party services
 - [ ] Check if buckets/blob storages of AWS/Azure are private
 - [ ] Setup AWS S3 buckets encryption
+- [ ] Setup AWS S3 buckets CORS
 - [ ] Set Django shell to be read-only
 
 ## DNS
