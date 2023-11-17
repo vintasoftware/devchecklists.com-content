@@ -117,7 +117,16 @@ const rehypeFormatCheckboxes: Plugin = () => (tree) =>
             if (!checkbox.properties.id) {
                 checkbox.properties.id = generateSlug(
                     elementsToBeWrappedInLabel
-                        .map((text: any) => text.value)
+                        .map((text: any) => {
+                            if (text.value) return text.value;
+                            if (text.children)
+                                return text.children
+                                    .map((child: any) => child.value)
+                                    .filter(Boolean)
+                                    .join();
+                            return "";
+                        })
+                        .filter(Boolean)
                         .join(),
                 );
             }
