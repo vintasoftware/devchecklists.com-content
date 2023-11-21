@@ -94,7 +94,6 @@ title: Django Production Launch
 
 ## Security
 
-- [ ] Check the SaaS CTO Security Checklist: http://bit.ly/sqreen-security-checklist
 - [ ] Run Observatory: http://bit.ly/mozilla-observatory
 - [ ] Add all accesses of third-party tools to LastPass or another password manager service
 - [ ] Update OAuth callback/deauthorize URLs in all third-party services
